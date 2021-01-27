@@ -91,6 +91,7 @@ Alinha itens no eixo inverso - verticalmente (para row e row-reverse) ou horizon
     - flex-start
     - flex-end
     - center
+    - baseline
 
 <div align="center">
   <b>Imagem ilustrativa de align-items</b>
