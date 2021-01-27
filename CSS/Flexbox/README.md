@@ -123,7 +123,7 @@ Alinha apenas um dos itens individualmente, sobrescrevendo o align-items para aq
   </p>
 </div>
 
-Para utilizar o align-self, é necessário acrescentar a seguinte essa propriedade na customização do elemento em questão, como os dois exemplos a seguir:
+Para utilizar o align-self, é necessário acrescentar a seguinte propriedade na customização do elemento em questão, como os dois exemplos a seguir:
 ```
 .target.classeDoElementoEspecifico { align-self: flex-end; }
 ```
