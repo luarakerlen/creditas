@@ -134,7 +134,7 @@ Para utilizar o align-self, é necessário acrescentar a seguinte propriedade na
 ```
 
 #### Flex Grow
-Define o "crescimento" de um item flexível, se necessário.
+Define a capacidade de "crescimento" de um item flexível.
 Aceita um valor sem unidade que serve de proporção.
 Ele determina a quantidade de espaço disponível dentro do flex container que o item deve ocupar.
 Se todos os itens tiverem o flex-grow definidos como 1, o espaço restante no contêiner será distribuído igualmente para todos os itens.
