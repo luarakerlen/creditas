@@ -10,6 +10,7 @@
       * [Justify Content](#justify-content)
       * [Align Items](#align-items)
       * [Align Self](#align-self)
+      * [Flex Grow](#flex-grow)
    * [Autora](#autora)
 <!--te-->
 
@@ -130,6 +131,28 @@ Para utilizar o align-self, é necessário acrescentar a seguinte propriedade na
 
 ```
 .target:nth-of-type(numeroDoItem) { align-self: center; }
+```
+
+#### Flex Grow
+Define o "crescimento" de um item flexível, se necessário.
+Aceita um valor sem unidade que serve de proporção.
+Ele determina a quantidade de espaço disponível dentro do flex container que o item deve ocupar.
+Se todos os itens tiverem o flex-grow definidos como 1, o espaço restante no contêiner será distribuído igualmente para todos os itens.
+Se um dos itens tiver o valor 2, por exemplo, esse item ocupará o dobro do espaço restante em relação aos outros (ou tentará, pelo menos).
+- Valores defaul: 0
+
+<div align="center">
+  <b>Imagem ilustrativa de flex-grow</b>
+  <p>
+    <img style="border-radius: 5px" height="300" src="./src/flex-grow.svg" alt="Imagem ilustrativa de Flex Grow">
+  </p>
+</div>
+
+Exemplo
+```
+.classeDoElementoEspecifico {
+  flex-grow: 2;
+}
 ```
 
 ### Autora
