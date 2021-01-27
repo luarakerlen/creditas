@@ -51,6 +51,14 @@ Define a direção em que os itens serão organizados.
   </p>
 </div>
 
+Exemplo:
+```
+.classeDoElementoPai {
+  display: flex;
+  flex-direction: column;
+}
+```
+
 #### Justify Content
 Define a disposição dos itens ao longo do espaço disponível - horizontalmente (para row e row-reverse) ou verticalmente (para column e column-reverse).
 - Valores possíveis:
@@ -59,6 +67,7 @@ Define a disposição dos itens ao longo do espaço disponível - horizontalment
     - center
     - space-between
     - space-around
+    - space-evenly
 
 <div align="center">
   <b>Imagem ilustrativa de justify-content</b>
@@ -66,6 +75,14 @@ Define a disposição dos itens ao longo do espaço disponível - horizontalment
     <img style="border-radius: 5px" height="500" src="./src/justify-content.svg" alt="Imagem ilustrativa de Justify Content">
   </p>
 </div>
+
+Exemplo:
+```
+.classeDoElementoPai {
+  display: flex;
+  justify-content: space-around;
+}
+```
 
 #### Align Items
 Alinha itens no eixo inverso - verticalmente (para row e row-reverse) ou horizontalmente (para column e column-reverse)
@@ -81,6 +98,14 @@ Alinha itens no eixo inverso - verticalmente (para row e row-reverse) ou horizon
     <img style="border-radius: 5px" height="500" src="./src/align-items.svg" alt="Imagem ilustrativa de Align Items">
   </p>
 </div>
+
+Exemplo
+```
+.classeDoElementoPai {
+  display: flex;
+  align-items: center;
+}
+```
 
 #### Align Self
 Alinha apenas um dos itens individualmente, sobrescrevendo o align-items para aquele item específico - verticalmente (para row e row-reverse) ou horizontalmente (para column e column-reverse)
