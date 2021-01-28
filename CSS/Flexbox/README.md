@@ -16,6 +16,7 @@
       * [Flex Shrink](#flex-shrink)
       * [Flex Basis](#flex-basis)
       * [Order](#order)
+   * [Flex Shorthand](#flex-shorthand)
    * [Autora](#autora)
 <!--te-->
 
@@ -121,8 +122,37 @@ Exemplo:
 ```
 
 ---
+### Align Content
+Alinha as **linhas** do elemento pai quando há espaço extra no eixo cruzado, semelhante a como _justify-content_ alinha itens individuais no eixo principal.
+Esta propriedade só tem efeito quando o elemento pai for multilinha, onde _flex-wrap_ for definido como _wrap_ ou _wrap-reverse_.
+Um elemento pai de linha única (ou seja, onde _flex-wrap_ é definido com seu valor padrão _nowrap_) não refletirá efeito com o align-content.
+- Valores possíveis:
+    - stretch (default)
+    - flex-start
+    - flex-end
+    - center
+    - space-between
+    - space-around
+    - space-evenly
+
+<div align="center">
+  <b>Imagem ilustrativa de align-content</b>
+  <p>
+    <img style="border-radius: 5px" height="500" src="./src/align-content.svg" alt="Imagem ilustrativa de Align Content">
+  </p>
+</div>
+
+Exemplo:
+```
+.classeDoElementoPai {
+  display: flex;
+  align-content: space-between;
+}
+```
+
+---
 ### Align Items
-Alinha itens no eixo inverso - verticalmente (para row e row-reverse) ou horizontalmente (para column e column-reverse)
+Alinha os **itens** no eixo inverso - verticalmente (para row e row-reverse) ou horizontalmente (para column e column-reverse)
 - Valores possíveis:
     - stretch (default)
     - flex-start
@@ -145,7 +175,6 @@ Exemplo:
 }
 ```
 
----
 ## Propriedades dos filhos
 
 ### Align Self
@@ -275,7 +304,7 @@ Se existirem três elementos e dois receberem _order=1_, por exemplo, esses dois
 <div align="center">
   <b>Imagem ilustrativa de order</b>
   <p>
-    <img style="border-radius: 5px" height="500" src="./src/order.svg" alt="Imagem ilustrativa de Order">
+    <img style="border-radius: 5px" height="400" src="./src/order.svg" alt="Imagem ilustrativa de Order">
   </p>
 </div>
 
@@ -285,6 +314,8 @@ Exemplo:
   order: 1;
 }
 ```
+
+## Flex Shorthand
 
 ### Autora
 ---
