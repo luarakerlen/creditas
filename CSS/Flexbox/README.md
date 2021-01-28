@@ -19,6 +19,7 @@
    * [Flex Shorthand](#flex-shorthand)
       * [Flex](#flex)
       * [Flex Flow](#flex-flow)
+   * [Flexbox x CSS Grid](#flexbox-x-css-grid)
    * [Autora](#autora)
 <!--te-->
 
@@ -344,6 +345,32 @@ Exemplo:
 ```
 .classeDoElementoPai { flex-flow: column wrap; }
 ```
+
+## Flexbox x CSS Grid
+O CSS Grid é um sistema bidimensional, o que significa que pode lidar com colunas e linhas, ao contrário do flexbox que é basicamente um sistema unidimensional.
+
+<div align="center">
+  <b>Comparação entre Flexbox e CSS Grid</b>
+  <p>
+    <img style="border-radius: 5px" height="400" src="./src/flex-css.jpg" alt="Imagem de comparação entre Flexbox e CSS Grid">
+  </p>
+</div>
+
+Ambos ajudam demais no alinhamento (horizontal e vertical) e no desenvolvimento de grids dentro de aplicações modernas.
+Geralmente, usa-se o CSS Grid para montar a estrutura de layout da página e o flexbox para construir os "componentes" dentro desses blocos de layout do grid.
+
+Podemos fazer a seguinte comparação:
+
+<div align="center">
+  <b>Comparação entre Flexbox e CSS Grid</b>
+  <p>
+    <img style="border-radius: 5px" height="400" src="./src/casa.jfif" alt="Imagem de comparação entre Flexbox e CSS Grid utilizando uma casa">
+  </p>
+</div>
+
+Ou seja, se imaginarmos uma casa, o **CSS Grid** seria responsável pela **estrutura dos cômodos** e o **flexbox** seria responsável pela **disposição dos móveis dentro desses cômodos**.
+Isso porque o Flexbox é unidimensional, ou seja, linha **OU** coluna, então é perfeito para o desenvolvimento interno de COMPONENTES.
+Já CSS Grid é multidimensional (ou bidimensional), ou seja, linhas **E** colunas, perfeito pra LAYOUTS.
 
 ### Autora
 ---
