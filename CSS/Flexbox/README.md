@@ -347,7 +347,7 @@ Exemplo:
 ```
 
 ## Flexbox x CSS Grid
-O CSS Grid é um sistema bidimensional, o que significa que pode lidar com colunas e linhas, ao contrário do flexbox que é basicamente um sistema unidimensional.
+O Flexbox é um sistema unidimensional, o que significa que pode lidar com colunas **ou** linhas, ao contrário do CSS Grid que é um sistema bidimensional.
 
 <div align="center">
   <b>Comparação entre Flexbox e CSS Grid</b>
