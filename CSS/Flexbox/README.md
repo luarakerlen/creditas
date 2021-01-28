@@ -8,12 +8,14 @@
    * [Propriedades do pai](#propriedades-do-pai)
       * [Flex Direction](#flex-direction)
       * [Justify Content](#justify-content)
+      * [Flex Wrap](#flex-wrap)
       * [Align Items](#align-items)
    * [Propriedades dos filhos](#propriedades-dos-filhos)
       * [Align Self](#align-self)
       * [Flex Grow](#flex-grow)
       * [Flex Shrink](#flex-shrink)
       * [Flex Basis](#flex-basis)
+      * [Order](#order)
    * [Autora](#autora)
 <!--te-->
 
@@ -51,7 +53,7 @@ Define a direção em que os itens serão organizados.
 <div align="center">
   <b>Imagem ilustrativa de flex-direction</b>
   <p>
-    <img style="border-radius: 5px" height="300" src="./src/flex-direction.svg" alt="Imagem ilustrativa de Flex Direction">
+    <img style="border-radius: 5px" height="200" src="./src/flex-direction.svg" alt="Imagem ilustrativa de Flex Direction">
   </p>
 </div>
 
@@ -86,6 +88,35 @@ Exemplo:
 .classeDoElementoPai {
   display: flex;
   justify-content: space-around;
+}
+```
+
+---
+### Flex Wrap
+Por padrão, os itens tentarão todos se ajustar em uma linha.
+É possível alterar isso e permitir que os itens sejam "quebrados em mais linhas" conforme necessário com esta propriedade.
+- Valores possíveis:
+    - nowrap (default)
+    - wrap: os itens flexíveis serão quebrados em várias linhas, de cima para baixo.
+    - wrap-reverse: os itens flexíveis serão quebrados em várias linhas, de baixo para cima. **O wrap-reverse dá a impressão de inversão do align-items**
+
+<div align="center">
+  <b>Imagem ilustrativa de flex-wrap</b>
+  <p>
+    <img style="border-radius: 5px" height="200" src="./src/flex-wrap.svg" alt="Imagem ilustrativa de Flex Wrap">
+  </p>
+  
+  <b>Imagem ilustrativa com os diferentes valores de flex-wrap</b>
+  <p>
+    <img style="border-radius: 5px" height="300" src="./src/flex-wrap.jpg" alt="Imagem ilustrativa com os diferentes valores de Flex Wrap">
+  </p>
+</div>
+
+Exemplo:
+```
+.classeDoElementoPai {
+  display: flex;
+  flex-wrap: wrap;
 }
 ```
 
@@ -128,7 +159,7 @@ Alinha apenas um dos itens individualmente, sobrescrevendo o align-items para aq
 <div align="center">
   <b>Imagem ilustrativa de align-self</b>
   <p>
-    <img style="border-radius: 5px" height="300" src="./src/align-self.svg" alt="Imagem ilustrativa de Align Self">
+    <img style="border-radius: 5px" height="200" src="./src/align-self.svg" alt="Imagem ilustrativa de Align Self">
   </p>
 </div>
 
@@ -153,7 +184,7 @@ Se um dos itens tiver o valor 2, por exemplo, esse item ocupará o dobro do espa
 <div align="center">
   <b>Imagem ilustrativa de flex-grow</b>
   <p>
-    <img style="border-radius: 5px" height="300" src="./src/flex-grow.svg" alt="Imagem ilustrativa de Flex Grow">
+    <img style="border-radius: 5px" height="200" src="./src/flex-grow.svg" alt="Imagem ilustrativa de Flex Grow">
   </p>
 </div>
 
@@ -171,19 +202,20 @@ Aceita um valor sem unidade que serve de proporção.
 Se todos os itens tiverem o flex-shrink definidos como 1, todos os itens diminuirão na mesma proporção.
 Se um dos itens tiver o valor 2, por exemplo, esse item encolherá duas vezes mais rápido em relação aos outros com valor igual a 1.
 Se um item tiver o valor 0, ele não se encolherá.
+Caso o elemento pai esteja configurado com _flex-wrap=wrap ou wrap-reverse_, o "encolhimento é feito apenas DEPOIS das quebras de linha.
 
 **Os itens PODEM possuir _flex-grow_ e _flex-shrink_ ao mesmo tempo**
 - Valor default: 1
 
 <div align="center">
-  <b>Imagem ilustrativa com todos os itens com flex-shrink = 1, exceto pelo terceiro item</b>
+  <b>Imagem ilustrativa com todos os itens com flex-shrink=1, exceto pelo terceiro item</b>
   <p>
-    <img style="border-radius: 5px" height="200" src="./src/flex-shrink.gif" alt="Imagem ilustrativa com todos os itens com flex-shrink = 1, exceto pelo terceiro item">
+    <img style="border-radius: 5px" height="200" src="./src/flex-shrink.gif" alt="Imagem ilustrativa com todos os itens com flex-shrink=1, exceto pelo terceiro item">
   </p>
   
-  <b>Imagem ilustrativa com todos os itens com flex-shrink = 1, exceto pelo segundo item</b>
+  <b>Imagem ilustrativa com todos os itens com flex-shrink=1, exceto pelo segundo item</b>
   <p>
-    <img style="border-radius: 5px" height="200" src="./src/flex-shrink.jpeg" alt="Imagem ilustrativa com todos os itens com flex-shrink = 1, exceto pelo segundo item">
+    <img style="border-radius: 5px" height="200" src="./src/flex-shrink.jpeg" alt="Imagem ilustrativa com todos os itens com flex-shrink=1, exceto pelo segundo item">
   </p>
 </div>
 
@@ -236,6 +268,8 @@ Exemplos:
 ---
 ### Order
 Por padrão, os itens são dispostos na ordem de origem. No entanto, a propriedade _order_ pode alterar a ordem em que eles aparecem no elemento pai.
+A ordem não necessariamente segue a sequência [1, 2, 3, ...] Quanto maior o valor da propriedade _order_, mais atrás o item será posicionado, e vice-versa. Essa propriedade pode receber valores negativos.
+Se existirem três elementos e dois receberem _order=1_, por exemplo, esses dois elementos irão para o final do container pai e o elemento que não recebeu nada ficará no início.
 - Valor default: 0
 
 <div align="center">
@@ -248,7 +282,7 @@ Por padrão, os itens são dispostos na ordem de origem. No entanto, a proprieda
 Exemplo:
 ```
 .classeDoElementoEspecifico {
-  flex-shrink: 2;
+  order: 1;
 }
 ```
 
