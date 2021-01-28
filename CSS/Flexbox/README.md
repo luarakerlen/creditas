@@ -17,6 +17,8 @@
       * [Flex Basis](#flex-basis)
       * [Order](#order)
    * [Flex Shorthand](#flex-shorthand)
+      * [Flex](#flex)
+      * [Flex Flow](#flex-flow)
    * [Autora](#autora)
 <!--te-->
 
@@ -24,7 +26,7 @@
 O Flexbox é um conceito do CSS3 que visa organizar os elementos de uma página HTML dentro de seus containers de forma dinâmica. Ou seja, independente das suas dimensões eles sempre manterão um layout flexível dentro do seu elemento pai, reorganizando-se e acordo com a necessidade.
 
 <div align="center">
-  <b>As imagens a seguir mostram um container, que é o elemento pai, com vários itens (filhos) dentro dele.</b>
+  <b>As imagens a seguir mostram um container, que é o elemento pai, com vários itens (filhos) dentro dele</b>
   <p>
     <img style="border-radius: 5px" height="200" src="./src/01-container.svg" alt="Container">
   </p>
@@ -36,9 +38,7 @@ O Flexbox é um conceito do CSS3 que visa organizar os elementos de uma página 
 ## Inicialização
 Para utilizar as propriedades do flexbox nos elementos, basta acrescentar a seguinte propriedade na customização do **elemento pai**:
 ```
-.classeDoElementoPai {
-  display: flex;
-}
+.classeDoElementoPai { display: flex; }
 ```
 
 ## Propriedades do pai
@@ -219,9 +219,7 @@ Se um dos itens tiver o valor 2, por exemplo, esse item ocupará o dobro do espa
 
 Exemplo:
 ```
-.classeDoElementoEspecifico {
-  flex-grow: 2;
-}
+.classeDoElementoEspecifico { flex-grow: 2; }
 ```
 
 ---
@@ -250,9 +248,7 @@ Caso o elemento pai esteja configurado com _flex-wrap=wrap ou wrap-reverse_, o "
 
 Exemplo:
 ```
-.classeDoElementoEspecifico {
-  flex-shrink: 2;
-}
+.classeDoElementoEspecifico { flex-shrink: 2; }
 ```
 
 ---
@@ -283,15 +279,11 @@ Portanto, para itens organizados em linha:**
 
 Exemplos:
 ```
-.classeDoElementoEspecifico {
-  flex-basis: 300px;
-}
+.classeDoElementoEspecifico { flex-basis: 300px; }
 ```
 
 ```
-.classeDoElementoEspecifico {
-  flex-basis: 50%;
-}
+.classeDoElementoEspecifico { flex-basis: 50%; }
 ```
 
 ---
@@ -310,12 +302,48 @@ Se existirem três elementos e dois receberem _order=1_, por exemplo, esses dois
 
 Exemplo:
 ```
-.classeDoElementoEspecifico {
-  order: 1;
-}
+.classeDoElementoEspecifico { order: 1; }
 ```
 
 ## Flex Shorthand
+
+### Flex
+É a abreviação para as propriedades _flex-grow_, _flex-shrink_ e _flex-basis_ combinados, nessa ordem.
+O segundo e o terceiro parâmetros (_flex-shrink_ e _flex-basis_) são opcionais, mas o elemento terá os valores default automaticamente para essas propriedades. 
+- Valor default: 0 1 0px
+- Outros valores:
+  - flex: auto - equilave à _1 1 auto_
+  - flex: none - equivale à _0 0 auto_
+
+Exemplos:
+```
+.classeDoElementoEspecifico { flex: 2 0 30%; }
+```
+
+```
+.classeDoElementoEspecifico { flex: 1 2; }
+```
+
+```
+.classeDoElementoEspecifico { flex: 1 300px; }
+```
+
+```
+.classeDoElementoEspecifico { flex: 1; }
+```
+
+```
+.classeDoElementoEspecifico { flex: auto; }
+```
+---
+### Flex Flow
+É a abreviação para as propriedades _flex-direction_ e _flex-wrap_, nessa ordem.
+- Valor default: row nowrap
+
+Exemplo:
+```
+.classeDoElementoPai { flex-flow: column wrap; }
+```
 
 ### Autora
 ---
