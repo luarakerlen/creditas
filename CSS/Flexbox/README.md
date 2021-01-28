@@ -5,21 +5,23 @@
 <!--ts-->
    * [Conceito](#conceito)
    * [Inicialização](#inicialização)
-   * [Propriedades](#propriedades)
+   * [Propriedades do pai](#propriedades-do-pai)
       * [Flex Direction](#flex-direction)
       * [Justify Content](#justify-content)
       * [Align Items](#align-items)
+   * [Propriedades dos filhos](#propriedades-dos-filhos)
       * [Align Self](#align-self)
       * [Flex Grow](#flex-grow)
+      * [Flex Shrink](#flex-shrink)
+      * [Flex Basis](#flex-basis)
    * [Autora](#autora)
 <!--te-->
-
 
 ## Conceito
 O Flexbox é um conceito do CSS3 que visa organizar os elementos de uma página HTML dentro de seus containers de forma dinâmica. Ou seja, independente das suas dimensões eles sempre manterão um layout flexível dentro do seu elemento pai, reorganizando-se e acordo com a necessidade.
 
 <div align="center">
-  <b>As imagens a seguir mostram um container, que é o elemento pai, com vários itens dentro dele.</b>
+  <b>As imagens a seguir mostram um container, que é o elemento pai, com vários itens (filhos) dentro dele.</b>
   <p>
     <img style="border-radius: 5px" height="200" src="./src/01-container.svg" alt="Container">
   </p>
@@ -36,8 +38,9 @@ Para utilizar as propriedades do flexbox nos elementos, basta acrescentar a segu
 }
 ```
 
-## Propriedades
-#### Flex Direction
+## Propriedades do pai
+
+### Flex Direction
 Define a direção em que os itens serão organizados.
 - Valores possíveis:
     - row (default)
@@ -60,7 +63,8 @@ Exemplo:
 }
 ```
 
-#### Justify Content
+---
+### Justify Content
 Define a disposição dos itens ao longo do espaço disponível - horizontalmente (para row e row-reverse) ou verticalmente (para column e column-reverse).
 - Valores possíveis:
     - flex-start (default)
@@ -85,7 +89,8 @@ Exemplo:
 }
 ```
 
-#### Align Items
+---
+### Align Items
 Alinha itens no eixo inverso - verticalmente (para row e row-reverse) ou horizontalmente (para column e column-reverse)
 - Valores possíveis:
     - stretch (default)
@@ -101,7 +106,7 @@ Alinha itens no eixo inverso - verticalmente (para row e row-reverse) ou horizon
   </p>
 </div>
 
-Exemplo
+Exemplo:
 ```
 .classeDoElementoPai {
   display: flex;
@@ -109,7 +114,10 @@ Exemplo
 }
 ```
 
-#### Align Self
+---
+## Propriedades dos filhos
+
+### Align Self
 Alinha apenas um dos itens individualmente, sobrescrevendo o align-items para aquele item específico - verticalmente (para row e row-reverse) ou horizontalmente (para column e column-reverse)
 - Valores possíveis (os mesmos de align-items):
     - stretch (default)
@@ -126,20 +134,21 @@ Alinha apenas um dos itens individualmente, sobrescrevendo o align-items para aq
 
 Para utilizar o align-self, é necessário acrescentar a seguinte propriedade na customização do elemento em questão, como os dois exemplos a seguir:
 ```
-.target.classeDoElementoEspecifico { align-self: flex-end; }
+.classeDoElementoEspecifico { align-self: flex-end; }
 ```
 
 ```
-.target:nth-of-type(numeroDoItem) { align-self: center; }
+.classeDoElementoPai:nth-of-type(numeroDoItem) { align-self: center; }
 ```
 
-#### Flex Grow
-Define a capacidade de "crescimento" de um item flexível.
+---
+### Flex Grow
+Define a capacidade de "crescimento" de um item flexível, quando há espaço "sobrando".
 Aceita um valor sem unidade que serve de proporção.
 Ele determina a quantidade de espaço disponível dentro do flex container que o item deve ocupar.
 Se todos os itens tiverem o flex-grow definidos como 1, o espaço restante no contêiner será distribuído igualmente para todos os itens.
-Se um dos itens tiver o valor 2, por exemplo, esse item ocupará o dobro do espaço restante em relação aos outros (ou tentará, pelo menos).
-- Valores defaul: 0
+Se um dos itens tiver o valor 2, por exemplo, esse item ocupará o dobro do espaço restante em relação aos outros com valor igual a 1 (ou tentará, pelo menos).
+- Valor default: 0
 
 <div align="center">
   <b>Imagem ilustrativa de flex-grow</b>
@@ -148,10 +157,98 @@ Se um dos itens tiver o valor 2, por exemplo, esse item ocupará o dobro do espa
   </p>
 </div>
 
-Exemplo
+Exemplo:
 ```
 .classeDoElementoEspecifico {
   flex-grow: 2;
+}
+```
+
+---
+### Flex Shrink
+Define a capacidade de "encolhimento" de um item flexível, quando não há espaço suficiente.
+Aceita um valor sem unidade que serve de proporção.
+Se todos os itens tiverem o flex-shrink definidos como 1, todos os itens diminuirão na mesma proporção.
+Se um dos itens tiver o valor 2, por exemplo, esse item encolherá duas vezes mais rápido em relação aos outros com valor igual a 1.
+Se um item tiver o valor 0, ele não se encolherá.
+
+**Os itens PODEM possuir _flex-grow_ e _flex-shrink_ ao mesmo tempo**
+- Valor default: 1
+
+<div align="center">
+  <b>Imagem ilustrativa com todos os itens com flex-shrink = 1, exceto pelo terceiro item</b>
+  <p>
+    <img style="border-radius: 5px" height="200" src="./src/flex-shrink.gif" alt="Imagem ilustrativa com todos os itens com flex-shrink = 1, exceto pelo terceiro item">
+  </p>
+  
+  <b>Imagem ilustrativa com todos os itens com flex-shrink = 1, exceto pelo segundo item</b>
+  <p>
+    <img style="border-radius: 5px" height="200" src="./src/flex-shrink.jpeg" alt="Imagem ilustrativa com todos os itens com flex-shrink = 1, exceto pelo segundo item">
+  </p>
+</div>
+
+Exemplo:
+```
+.classeDoElementoEspecifico {
+  flex-shrink: 2;
+}
+```
+
+---
+### Flex Basis
+Define o tamanho **inicial** ideal de um elemento, caso seja possível.
+Pode ser um valor para o comprimento (por exemplo, 20%, 5rem, etc.) ou uma palavra-chave.
+O valor do flex-basis é o tamanho inicial "ideal" para aquele item, mas se o espaço não permitir, o item receberá apenas o tamanho possível.
+A palavra-chave _auto_ significa “olhe para a minha propriedade de largura ou altura”.
+
+**Os itens PODEM possuir _flex-basis_, _flex-grow_ e _flex-shrink_ ao mesmo tempo**
+- Valor default: auto
+
+**Contudo, o _flex-basis_ sempre respeita os valores de _min-width_, _min-height, _max-width_ e _max-height_.
+Portanto, para itens organizados em linha:**
+  - **Se o valor do _flex-basis_ for menor do que o valor do _min-width_, o valor respeitado será o do _min-width_.**
+  - **Se o valor do _flex-basis_ for maior do que o valor do _max-width_, o valor respeitado será o do _max-width_.**
+  
+**E para itens organizados em coluna:**
+  - **Se o valor do _flex-basis_ for menor do que o valor do _min-height_, o valor respeitado será o do _min-height_.**
+  - **Se o valor do _flex-basis_ for maior do que o valor do _max-height_, o valor respeitado será o do _max-height_.**
+  
+<div align="center">
+  <b>Imagem ilustrativa de flex-basis</b>
+  <p>
+    <img style="border-radius: 5px" height="500" src="./src/flex-basis.jpg" alt="Imagem ilustrativa de Flex Basis">
+  </p>
+</div>
+
+Exemplos:
+```
+.classeDoElementoEspecifico {
+  flex-basis: 300px;
+}
+```
+
+```
+.classeDoElementoEspecifico {
+  flex-basis: 50%;
+}
+```
+
+---
+### Order
+Por padrão, os itens são dispostos na ordem de origem. No entanto, a propriedade _order_ pode alterar a ordem em que eles aparecem no elemento pai.
+- Valor default: 0
+
+<div align="center">
+  <b>Imagem ilustrativa de order</b>
+  <p>
+    <img style="border-radius: 5px" height="500" src="./src/order.svg" alt="Imagem ilustrativa de Order">
+  </p>
+</div>
+
+Exemplo:
+```
+.classeDoElementoEspecifico {
+  flex-shrink: 2;
 }
 ```
 
