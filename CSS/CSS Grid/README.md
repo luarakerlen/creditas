@@ -6,7 +6,7 @@
    * [Conceito](#conceito)
    * [Inicialização](#inicialização)
    * [Propriedades do pai](#propriedades-do-pai)
-      * [Grid Template Columns | Grid Template Rows](#grid-template-columns-e-grid-template-rows)
+      * [Grid Template Columns | Grid Template Rows](#grid-template-columns-|-grid-template-rows)
       * [Justify Content](#justify-content)
       * [Flex Wrap](#flex-wrap)
       * [Align Items](#align-items)
