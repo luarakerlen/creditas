@@ -16,7 +16,7 @@
       * [Flex Shrink](#flex-shrink)
       * [Flex Basis](#flex-basis)
       * [Order](#order)
-   * [Flex Shorthand](#flex-shorthand)
+   * [Flex Shorthands](#flex-shorthands)
       * [Flex Flow](#flex-flow)
       * [Flex](#flex)
    * [Flexbox x CSS Grid](#flexbox-x-css-grid)
@@ -306,7 +306,7 @@ Exemplo:
 .classeDoElementoEspecifico { order: 1; }
 ```
 
-## Flex Shorthand
+## Flex Shorthands
 
 ### Flex Flow
 É a abreviação para as propriedades _flex-direction_ e _flex-wrap_, nessa ordem.
