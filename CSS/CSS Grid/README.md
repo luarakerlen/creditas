@@ -52,6 +52,7 @@ Exemplo:
 
 ## Propriedades do pai
 <span id="grid-template-columns-e-grid-template-rows" />
+
 ### Grid Template Columns | Grid Template Rows
 Definem as colunas e linhas da grade com uma lista de valores separados por espaço.
 Os valores representam o tamanho da trilha e o espaço entre eles representa a linha da grid.
