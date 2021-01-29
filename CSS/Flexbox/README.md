@@ -17,8 +17,8 @@
       * [Flex Basis](#flex-basis)
       * [Order](#order)
    * [Flex Shorthand](#flex-shorthand)
-      * [Flex](#flex)
       * [Flex Flow](#flex-flow)
+      * [Flex](#flex)
    * [Flexbox x CSS Grid](#flexbox-x-css-grid)
    * [Autora](#autora)
 <!--te-->
@@ -308,6 +308,16 @@ Exemplo:
 
 ## Flex Shorthand
 
+### Flex Flow
+É a abreviação para as propriedades _flex-direction_ e _flex-wrap_, nessa ordem.
+- Valor default: row nowrap
+
+Exemplo:
+```
+.classeDoElementoPai { flex-flow: column wrap; }
+```
+
+---
 ### Flex
 É a abreviação para as propriedades _flex-grow_, _flex-shrink_ e _flex-basis_ combinados, nessa ordem.
 O segundo e o terceiro parâmetros (_flex-shrink_ e _flex-basis_) são opcionais, mas o elemento terá os valores default automaticamente para essas propriedades. 
@@ -335,15 +345,6 @@ Exemplos:
 
 ```
 .classeDoElementoEspecifico { flex: auto; }
-```
----
-### Flex Flow
-É a abreviação para as propriedades _flex-direction_ e _flex-wrap_, nessa ordem.
-- Valor default: row nowrap
-
-Exemplo:
-```
-.classeDoElementoPai { flex-flow: column wrap; }
 ```
 
 ## Flexbox x CSS Grid
