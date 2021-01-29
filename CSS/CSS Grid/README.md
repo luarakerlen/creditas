@@ -6,7 +6,7 @@
    * [Conceito](#conceito)
    * [Inicialização](#inicialização)
    * [Propriedades do pai](#propriedades-do-pai)
-      * [Grid Template Columns e Grid Template Rows](#grid-template-columns-e-grid-template-rows)
+      * [Grid Template Columns | Grid Template Rows](#grid-template-columns-e-grid-template-rows)
       * [Justify Content](#justify-content)
       * [Flex Wrap](#flex-wrap)
       * [Align Items](#align-items)
@@ -40,8 +40,8 @@ Trabalha-se com o Grid Layout aplicando regras CSS tanto a um elemento pai (que 
 ## Inicialização
 Para utilizar as propriedades do CSS Grids, é necessário acrescentar a propriedade _display_ na customização do **elemento pai**, com um dos dois valores disponíveis.
 - Valores possíveis:
-    - grid - gera grid em block-level*
-    - inline-grid - gera grid em inline-level*
+    - grid -> gera grid em block-level*
+    - inline-grid -> gera grid em inline-level*
     
 *<a href="https://www.youtube.com/watch?v=hgoFi0fCv3w&ab_channel=CemEygiMedia" target="_blank">Entenda a diferença entre display block, inline e inline-block</a>
     
@@ -52,13 +52,13 @@ Exemplo:
 
 ## Propriedades do pai
 
-### Grid Template Columns e Grid Template Rows
+### Grid Template Columns | Grid Template Rows
 Definem as colunas e linhas da grade com uma lista de valores separados por espaço.
 Os valores representam o tamanho da trilha e o espaço entre eles representa a linha da grid.
 
 - Valores:
-    - <track-size> – pode ser um comprimento, uma porcentagem ou uma fração do espaço livre na grade
-    - <line-name> – Nome arbitrário das linhas
+    - track-size –> pode ser um comprimento, uma porcentagem ou uma fração do espaço livre na grade
+    - line-name –> Nome arbitrário das linhas
 
 Exemplos:
 
@@ -78,6 +78,53 @@ Exemplos:
     <img style="border-radius: 5px" height="400" src="./src/template-columns-rows-01.svg" alt="Imagem ilustrativa do exemplo 1">
   </p>
 </div>
+
+2. Pode-se escolher nomear explicitamente as linhas da seguinte maneira:
+
+```
+.classeDoElementoPai {
+  grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+  grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+}
+```
+
+<div align="center">
+  <b>Imagem ilustrativa do exemplo 2</b>
+  <p>
+    <img style="border-radius: 5px" height="400" src="./src/template-column-rows-02.svg" alt="Imagem ilustrativa do exemplo 2">
+  </p>
+</div>
+
+3. Se a definição contém partes repetidas, pode-se usar a seguinte notação para simplificar as coisas:
+
+```
+.classeDoElementoPai { grid-template-columns: repeat(3, 20px [col-start]); }
+```
+O que é equivalente a:
+```
+.classeDoElementoPai { grid-template-columns: 20px [col-start] 20px [col-start] 20px [col-start]; }
+```
+
+4. É possível utilizar a unidade _fr_.
+A unidade _fr_ permite que definir o tamanho de uma trilha como uma fração do espaço livre do container pai.
+Por exemplo, se dois elementos forem definidos como 1fr e 3fr respectivamente, o espaço será dividido em 4 partes iguais:
+o primeiro elemento ocupará 1/4 e o segundo elemento, 3/4 do espaço restante.
+
+O código a seguir definirá cada item com um terço da largura do container da grid:
+```
+.classeDoElementoPai { grid-template-columns: 1fr 1fr 1fr; }
+```
+
+No código a seguir, o primeiro item ocupará um quarto e o segundo ocupará três quartos do container pai:
+```
+.classeDoElementoPai { grid-template-columns: 1fr 3fr; }
+```
+
+Porém, o espaço livre é calculado **após** quaisquer itens não flexíveis.
+No exemplo a seguir, a quantidade total de espaço livre disponível para os itens com unidade _fr_ não inclui o 50px, então o primeiro, terceiro e quarto itens ocuparão, cada um, um terço do espaço restante após o item de 50px ter tomado seu próprio espaço:
+```
+.classeDoElementoPai { grid-template-columns: 1fr 50px 1fr 1fr; }
+```
 
 ---
 
