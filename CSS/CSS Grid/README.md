@@ -6,7 +6,7 @@
    * [Conceito](#conceito)
    * [Inicialização](#inicialização)
    * [Propriedades do pai](#propriedades-do-pai)
-      * [Grid Template Columns | Grid Template Rows](#grid-template-columns-|-grid-template-rows)
+      * [Grid Template Columns | Grid Template Rows](#grid-template-columns-e-grid-template-rows)
       * [Justify Content](#justify-content)
       * [Flex Wrap](#flex-wrap)
       * [Align Items](#align-items)
@@ -51,7 +51,7 @@ Exemplo:
 ```
 
 ## Propriedades do pai
-
+<span id="grid-template-columns-e-grid-template-rows" />
 ### Grid Template Columns | Grid Template Rows
 Definem as colunas e linhas da grade com uma lista de valores separados por espaço.
 Os valores representam o tamanho da trilha e o espaço entre eles representa a linha da grid.
