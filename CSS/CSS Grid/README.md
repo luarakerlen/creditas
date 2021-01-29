@@ -9,7 +9,7 @@
       * [Grid Template Rows | Grid Template Columns](#grid-template-rows-e-grid-template-columns)
    * [Propriedades dos filhos](#propriedades-dos-filhos)
       * [Order](#order)
-   * [CSS Grid Shorthand](#css-grid-shorthand)
+   * [CSS Grid Shorthands](#css-grid-shorthands)
       * [Grid Template](#grid-template)
       * [Grid](#grid)
       * [Grid Row | Grid Column](#grid-row-e-grid-column)
@@ -144,7 +144,7 @@ Exemplo:
 .classeDoElementoEspecifico { order: 1; }
 ```
 
-## CSS Grid Shorthand
+## CSS Grid Shorthands
 
 ### Grid Template
 É a abreviação para as propriedades _grid-template-rows_, _grid-template-columns_ e _grid-template-areas_, nessa ordem, separados por "/" (barra).
