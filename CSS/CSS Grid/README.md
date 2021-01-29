@@ -6,19 +6,14 @@
    * [Conceito](#conceito)
    * [Inicialização](#inicialização)
    * [Propriedades do pai](#propriedades-do-pai)
-      * [Grid Template Columns | Grid Template Rows](#grid-template-columns-e-grid-template-rows)
-      * [Justify Content](#justify-content)
-      * [Flex Wrap](#flex-wrap)
-      * [Align Items](#align-items)
+      * [Grid Template Rows | Grid Template Columns](#grid-template-rows-e-grid-template-columns)
    * [Propriedades dos filhos](#propriedades-dos-filhos)
-      * [Align Self](#align-self)
-      * [Flex Grow](#flex-grow)
-      * [Flex Shrink](#flex-shrink)
-      * [Flex Basis](#flex-basis)
       * [Order](#order)
-   * [Flex Shorthand](#flex-shorthand)
-      * [Flex](#flex)
-      * [Flex Flow](#flex-flow)
+   * [CSS Grid Shorthand](#css-grid-shorthand)
+      * [Grid Template](#grid-template)
+      * [Grid](#grid)
+      * [Grid Row | Grid Column](#grid-row-e-grid-column)
+      * [Grid Area](#grid-area)
    * [CSS Grid x Flexbox](#css-grid-x-flexbox)
    * [Autora](#autora)
 <!--te-->
@@ -51,9 +46,9 @@ Exemplo:
 ```
 
 ## Propriedades do pai
-<span id="grid-template-columns-e-grid-template-rows" />
+<span id="grid-template-rows-e-grid-template-columns" />
 
-### Grid Template Columns | Grid Template Rows
+### Grid Template Rows | Grid Template Columns
 Definem as colunas e linhas da grade com uma lista de valores separados por espaço.
 Os valores representam o tamanho da trilha e o espaço entre eles representa a linha da grid.
 
@@ -68,8 +63,8 @@ Exemplos:
 ```
 .classeDoElementoPai {
   display: grid;
-  grid-template-columns: 40px 50px auto 50px 40px;
   grid-template-rows: 25% 100px auto;
+  grid-template-columns: 40px 50px auto 50px 40px;
 }
 ```
 
@@ -84,8 +79,8 @@ Exemplos:
 
 ```
 .classeDoElementoPai {
-  grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
   grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+  grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
 }
 ```
 
@@ -118,57 +113,170 @@ O código a seguir definirá cada item com um terço da largura do container da 
 
 No código a seguir, o primeiro item ocupará um quarto e o segundo ocupará três quartos do container pai:
 ```
-.classeDoElementoPai { grid-template-columns: 1fr 3fr; }
+.classeDoElementoPai { grid-template-rows: 1fr 3fr; }
 ```
 
 Porém, o espaço livre é calculado **após** quaisquer itens não flexíveis.
 No exemplo a seguir, a quantidade total de espaço livre disponível para os itens com unidade _fr_ não inclui o 50px, então o primeiro, terceiro e quarto itens ocuparão, cada um, um terço do espaço restante após o item de 50px ter tomado seu próprio espaço:
 ```
-.classeDoElementoPai { grid-template-columns: 1fr 50px 1fr 1fr; }
+.classeDoElementoPai { grid-template-rows: 1fr 50px 1fr 1fr; }
 ```
 
 ---
 
 ## Propriedades dos filhos
 
-## Flex Shorthand
+### Order
+Por padrão, os itens são dispostos na ordem de origem. No entanto, a propriedade _order_ pode alterar a ordem em que eles aparecem no elemento pai.
+A ordem não necessariamente segue a sequência [1, 2, 3, ...] Quanto maior o valor da propriedade _order_, mais atrás o item será posicionado, e vice-versa. Essa propriedade pode receber valores negativos.
+Se existirem três elementos e dois receberem _order=1_, por exemplo, esses dois elementos irão para o final do container pai e o elemento que não recebeu nada ficará no início.
+- Valor default: 0
 
-### Flex
-É a abreviação para as propriedades _flex-grow_, _flex-shrink_ e _flex-basis_ combinados, nessa ordem.
-O segundo e o terceiro parâmetros (_flex-shrink_ e _flex-basis_) são opcionais, mas o elemento terá os valores default automaticamente para essas propriedades. 
-- Valor default: 0 1 0px
-- Outros valores:
-  - flex: auto - equilave à _1 1 auto_
-  - flex: none - equivale à _0 0 auto_
-
-Exemplos:
-```
-.classeDoElementoEspecifico { flex: 2 0 30%; }
-```
-
-```
-.classeDoElementoEspecifico { flex: 1 2; }
-```
-
-```
-.classeDoElementoEspecifico { flex: 1 300px; }
-```
-
-```
-.classeDoElementoEspecifico { flex: 1; }
-```
-
-```
-.classeDoElementoEspecifico { flex: auto; }
-```
----
-### Flex Flow
-É a abreviação para as propriedades _flex-direction_ e _flex-wrap_, nessa ordem.
-- Valor default: row nowrap
+<div align="center">
+  <b>Imagem ilustrativa de order</b>
+  <p>
+    <img style="border-radius: 5px" height="400" src="./src/order.svg" alt="Imagem ilustrativa de Order">
+  </p>
+</div>
 
 Exemplo:
 ```
-.classeDoElementoPai { flex-flow: column wrap; }
+.classeDoElementoEspecifico { order: 1; }
+```
+
+## CSS Grid Shorthand
+
+### Grid Template
+É a abreviação para as propriedades _grid-template-rows_, _grid-template-columns_ e _grid-template-areas_, nessa ordem, separados por "/" (barra).
+
+Os dois códigos a seguir são equivalentes, mas o primeiro usa shorthand _grid-template_:
+```
+.classeDoElementoPai { grid-template: 50% 1fr 3fr / 1fr 20% 2fr 50px }
+```
+
+```
+.classeDoElementoPai {
+  grid-template-rows: 50% 1fr 3fr;
+  grid-template-columns: 1fr 20% 2fr 50px;
+}
+```
+
+---
+### Grid
+É a abreviação para as propriedades _grid-template-rows_, _grid-template-columns_, _grid-template-areas_, _grid-auto-rows_, _grid-auto-columns_, e _grid-auto-flow_, nessa ordem, separados por "/" (barra).
+
+Os dois códigos a seguir são equivalentes, mas o primeiro usa shorthand _grid_:
+```
+.classeDoElementoPai { grid: 100px 300px / 3fr 1fr; }
+```
+
+```
+.classeDoElementoPai {
+  grid-template-rows: 100px 300px;
+  grid-template-columns: 3fr 1fr;
+}
+```
+
+Os dois códigos a seguir são equivalentes, mas o primeiro usa shorthand _grid_:
+```
+.classeDoElementoPai { grid: auto-flow dense 100px / 1fr 2fr; }
+```
+
+```
+.classeDoElementoPai {
+  grid-auto-flow: row dense;
+  grid-auto-rows: 100px;
+  grid-template-columns: 1fr 2fr;
+}
+```
+
+Essa abreviação também aceita uma sintaxe mais complexa, mas bastante prática, para configurar tudo de uma vez.
+Especifica-se as propriedades _grid-template-areas_, _grid-template-rows_ e _grid-template-columns_, e todas as outras subpropriedades são definidas com seus valores iniciais.
+O que está sendo feito é especificar os nomes das linhas e os tamanhos das trilhas em linha com suas respectivas áreas de grade.
+Isso é mais fácil de descrever com um exemplo.
+
+Novamente, os dois códigos a seguir são equivalentes, mas o primeiro usa shorthand _grid_:
+```
+.classeDoElementoPai {
+  grid: [row1-start] "header header header" 1fr [row1-end]
+        [row2-start] "footer footer footer" 25px [row2-end]
+        / auto 50px auto;
+}
+```
+
+```
+.classeDoElementoPai {
+  grid-template-areas: 
+    "header header header"
+    "footer footer footer";
+  grid-template-rows: [row1-start] 1fr [row1-end row2-start] 25px [row2-end];
+  grid-template-columns: auto 50px auto;
+}
+```
+---
+<span id="grid-row-e-grid-column" />
+
+### Grid Row | Grid Column
+Grid Row é a abreviação para as propriedades _grid-row-start_ e _grid-row-end_, nessa ordem, separados por "/" (barra).
+Grid Column é a abreviação para as propriedades _grid-column-start_ e _grid-column-end_, nessa ordem, separados por "/" (barra).
+
+Os dois códigos a seguir são equivalentes, mas o primeiro usa shorthands _grid-row_ e _grid-column_:
+```
+.classeDoElementoFilho {
+  grid-row: 1 / 5 ;
+  grid-column: 2 / 4;
+}
+```
+
+```
+.classeDoElementoFilho {
+  grid-row-start: 1;
+  grid-row-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+```
+
+Os dois códigos a seguir são equivalentes, mas o primeiro usa shorthands _grid-row_ e _grid-column_:
+```
+.classeDoElementoFilho {
+  grid-row: 2 / span 3 ;
+  grid-column: 1 / span 5;
+}
+```
+
+```
+.classeDoElementoFilho {
+  grid-row-start: 2;
+  grid-row-end: span 3;
+  grid-column-start: 1;
+  grid-column-end: span 5;
+}
+```
+
+---
+### Grid Area
+É a abreviação para as propriedades _grid-row-start_, _grid-column-start_, _grid-row-end_ e _grid-row-end_, nessa ordem, separados por "/" (barra).
+
+Os três códigos a seguir são equivalentes, mas o primeiro usa shorthand _grid-area_:
+```
+.classeDoElementoFilho { grid-area: 1 / 2 / 4 / 6; }
+```
+
+```
+.classeDoElementoFilho {
+  grid-row: 1 / 4 ;
+  grid-column: 2 / 6;
+}
+```
+
+```
+.classeDoElementoFilho {
+  grid-row-start: 1;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 6;
+}
 ```
 
 ## CSS Grid x Flexbox
