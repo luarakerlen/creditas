@@ -218,7 +218,8 @@ Obs: O prefixo _grid-_ será removido e _grid-column-gap_ e _grid-row-gap_ seão
 <span id="grid-row-start-e-grid-row-end" />
 <span id="grid-column-start-e-grid-column-end" />
 
-### Grid Row Start | Grid Row End - Grid Column Start | Grid Column End
+### Grid Row Start | Grid Row End
+### Grid Column Start | Grid Column End
 Determina a localização de um item de grade dentro da grade referindo-se a linhas de grade específicas.
 _grid-row-start_ / _grid-column-start_ é a linha onde o item começa e _grid-row-end_ / _grid-column-end_ é a linha onde o item termina.
 Se nenhum _grid-row-end_ / _grid-column-end_ for declarado, o item ocupará 1 trilha por padrão.
