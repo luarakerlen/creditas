@@ -7,11 +7,17 @@
    * [Inicialização](#inicialização)
    * [Propriedades do pai](#propriedades-do-pai)
       * [Grid Template Rows | Grid Template Columns](#grid-template-rows-e-grid-template-columns)
+      * [Grid Template Areas](#grid-template-areas)
+      * [Row Gap | Column Gap](#row-gap-e-column-gap)
    * [Propriedades dos filhos](#propriedades-dos-filhos)
+      * [Grid Row Start | Grid Row End](#grid-row-start-e-grid-row-end)
+      * [Grid Column Start | Grid Column End](#grid-column-start-e-grid-column-end)
+      * [Row Gap | Column Gap](#row-gap-e-column-gap)
       * [Order](#order)
    * [CSS Grid Shorthands](#css-grid-shorthands)
       * [Grid Template](#grid-template)
       * [Grid](#grid)
+      * [Gap](#gap)
       * [Grid Row | Grid Column](#grid-row-e-grid-column)
       * [Grid Area](#grid-area)
    * [CSS Grid x Flexbox](#css-grid-x-flexbox)
@@ -54,7 +60,7 @@ Os valores representam o tamanho da trilha e o espaço entre eles representa a l
 
 - Valores:
     - track-size –> pode ser um comprimento, uma porcentagem ou uma fração do espaço livre na grade
-    - line-name –> Nome arbitrário das linhas
+    - line-name –> nome arbitrário das linhas
 
 Exemplos:
 
@@ -123,9 +129,144 @@ No exemplo a seguir, a quantidade total de espaço livre disponível para os ite
 ```
 
 ---
+### Grid Template Areas
+Define um modelo de grade fazendo referência aos nomes das áreas de grade que são especificadas com a propriedade grid-area.
+Repetir o nome de uma área de grade faz com que o conteúdo se espalhe por essas células.
+Um ponto (.) significa uma célula vazia. A própria sintaxe fornece uma visualização da estrutura da grid.
+
+- Valores:
+    - grid-area-name –> o nome de uma área de grade especificada com grid-area
+    - . –> um ponto significa uma célula de grade vazia
+    - none –> nenhuma área de grade é definida
+
+Exemplo:
+
+1. O exemplo abaixo criará uma grade com 4 colunas de largura por 3 linhas de altura.
+Toda a linha superior será composta pela área do cabeçalho.
+A linha do meio será composta de duas áreas principais, uma célula vazia e uma área da barra lateral.
+A última linha é toda de rodapé.
+
+```
+.item-a {
+  grid-area: header;
+}
+.item-b {
+  grid-area: main;
+}
+.item-c {
+  grid-area: sidebar;
+}
+.item-d {
+  grid-area: footer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+}
+```
+
+<div align="center">
+  <b>Imagem ilustrativa do exemplo 1</b>
+  <p>
+    <img style="border-radius: 5px" height="400" src="./src/dddgrid-template-areas.svg" alt="Imagem ilustrativa do exemplo 1">
+  </p>
+</div>
+
+Cada linha em sua declaração precisa ter o mesmo número de células.
+Pode-se usar qualquer número de pontos adjacentes para declarar uma única célula vazia. Desde que os pontos não tenham espaços entre eles, eles representam uma única célula.
+Observe que não se está nomeando linhas com esta sintaxe, apenas áreas.
+Quando se usa esta sintaxe, as linhas nas extremidades das áreas são, na verdade, nomeadas automaticamente. Se o nome da área da grid for _foo_, o nome da primeira linha da linha e da primeira linha da coluna da área será _foo-start_, e o nome da última linha da linha e da última linha da coluna será _foo-end_. Isso significa que algumas linhas podem ter vários nomes, como a linha da extrema esquerda no exemplo acima, que terá três nomes: _header-start_, _main-start_ e _footer-start_.
+ 
+---
+<span id="row-gap-e-column-gap" />
+
+### Row Gap | Column Gap
+Especifica o tamanho do espaço entre as linhas/colunas.
+Os espaços são criados apenas **entre** as linhas/colunas, não nas bordas externas.
+
+- Valor:
+    - line-size –> um valor de comprimento
+
+Exemplo:
+
+```
+.classeDoElementoPai {
+  display: grid;
+  grid-template-columns: 100px 50px 100px;
+  grid-template-rows: 80px auto 80px; 
+  column-gap: 10px;
+  row-gap: 15px;
+}
+```
+
+<div align="center">
+  <b>Imagem ilustrativa do exemplo 1</b>
+  <p>
+    <img style="border-radius: 5px" height="400" src="./src/dddgrid-gap.svg" alt="Imagem ilustrativa do exemplo 1">
+  </p>
+</div>
+
+Obs: O prefixo _grid-_ será removido e _grid-column-gap_ e _grid-row-gap_ seão renomeados para _column-gap_ e _row-gap_. As propriedades não corrigidas já são suportadas no Chrome 68+, Safari 11.2 Release 50+ e Opera 54+.
 
 ## Propriedades dos filhos
+<span id="grid-row-start-e-grid-row-end" />
+<span id="grid-column-start-e-grid-column-end" />
 
+### Grid Row Start | Grid Row End - Grid Column Start | Grid Column End
+Determina a localização de um item de grade dentro da grade referindo-se a linhas de grade específicas.
+_grid-row-start_ / _grid-column-start_ é a linha onde o item começa e _grid-row-end_ / _grid-column-end_ é a linha onde o item termina.
+Se nenhum _grid-row-end_ / _grid-column-end_ for declarado, o item ocupará 1 trilha por padrão.
+Os itens podem se sobrepor. Pode-se usar z-indexpara controlar a ordem de empilhamento.
+
+- Valores:
+    - line –> pode ser um número para se referir a uma linha de grade numerada ou um nome para se referir a uma linha de grade nomeada
+    - span number -> o item irá abranger o número fornecido de faixas de grade
+    - span name -> o item se estenderá até atingir a próxima linha com o nome fornecido
+    - auto -> indica a colocação automática, um intervalo automático ou um intervalo padrão de um
+
+Exemplos:
+
+Exemplo 1:
+```
+.item-a {
+  grid-column-start: 2;
+  grid-column-end: five;
+  grid-row-start: row1-start;
+  grid-row-end: 3;
+}
+```
+
+<div align="center">
+  <b>Imagem ilustrativa do exemplo 1</b>
+  <p>
+    <img style="border-radius: 5px" height="400" src="./src/grid-column-row-start-end-01.svg" alt="Imagem ilustrativa do exemplo 1">
+  </p>
+</div>
+
+Exemplo 2:
+```
+.item-b {
+  grid-column-start: 1;
+  grid-column-end: span col4-start;
+  grid-row-start: 2;
+  grid-row-end: span 2;
+}
+```
+
+<div align="center">
+  <b>Imagem ilustrativa do exemplo 2</b>
+  <p>
+    <img style="border-radius: 5px" height="400" src="./src/grid-column-row-start-end-02.svg" alt="Imagem ilustrativa do exemplo 2">
+  </p>
+</div>
+
+---
 ### Order
 Por padrão, os itens são dispostos na ordem de origem. No entanto, a propriedade _order_ pode alterar a ordem em que eles aparecem no elemento pai.
 A ordem não necessariamente segue a sequência [1, 2, 3, ...] Quanto maior o valor da propriedade _order_, mais atrás o item será posicionado, e vice-versa. Essa propriedade pode receber valores negativos.
@@ -215,6 +356,27 @@ Novamente, os dois códigos a seguir são equivalentes, mas o primeiro usa short
 ```
 ---
 <span id="grid-row-e-grid-column" />
+
+### Gap
+É a abreviação para as propriedades _row-gap_ e _column-gap_, nessa ordem. Caso seja especificado apenas 1 valor, tanto _row-gap_ quanto _column-gap_ receberão o mesmo valor.
+
+Os dois códigos a seguir são equivalentes, mas o primeiro usa shorthand _gap_:
+```
+.classeDoElementoPai {
+  grid-template-columns: 100px 50px 100px;
+  grid-template-rows: 80px auto 80px; 
+  gap: 15px 10px;
+}
+```
+
+```
+.classeDoElementoPai {
+  grid-template-columns: 100px 50px 100px;
+  grid-template-rows: 80px auto 80px; 
+  row-gap: 15px;
+  column-gap: 10px;
+}
+```
 
 ### Grid Row | Grid Column
 Grid Row é a abreviação para as propriedades _grid-row-start_ e _grid-row-end_, nessa ordem, separados por "/" (barra).
