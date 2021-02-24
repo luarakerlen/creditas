@@ -38,6 +38,9 @@
 	<dd>
              <a href="#brTag">- < br ></a>
         </dd>
+		<dd>
+             <a href="#comentTag">- < ! Comentário ></a>
+        </dd>
    <dt>
      <a href="#formatTag">- Formatando Texto</a>
    </dt>
@@ -49,13 +52,21 @@
    <dt>
      <a href="#listasTag">- Listas</a>
    </dt>
-   
+		   <dd>
+				 <a href="#lo">Lista Ordenada - ul </a>
+			</dd>
+			<dd>
+			<a href="#lno">Lista Não Ordenada - ol </a>
+			</dd>
+			<dd>
+			<a href="#ld">Lista de Defnição - dl</a>
+			</dd>   
    <dt>
      <a href="#tabelasTag">- Tabelas</a>
    </dt>
    
    <dt>
-     <a href="#FormulariosTag">- Formulários</a>
+     <a href="#formTag">- Formulários</a>
    </dt>
 </dl>
 
@@ -216,14 +227,390 @@ Tag responsável por quebrar linhhas.
 	 < br>
 	 TEXTO 2< / p>
 
+<h2 id="comentTag"><! Comentários > </h2>
+As tags de comenatários são usadas para inserir informações e orientações do documento escrito, para quanto visto dps saber o que se tem ali. 
+
+<i>PS: COMENTÁRIOS NÃO SÃO EXIBIDOS PELO NAVEGADOR, É APENAS PARA O DEV</i> 
+
+**SIXTÁXE:**
+
+	< p > TEXTO 1< / p> < ! texto discritivo >
+
 <h2 id="formatTag"> Formatando Texto </h2>
 Abaixo serão listados as principais tags utilizadas para estilizar textos, onde na maioria das vezes é usada dentro da tag de parágrafo <i>< p > </i> .
 
 * < b >    NEGRITO </ b > 
 
-<b>    NEGRITO </b> 
+	<b>NEGRITO</b> 
 
 * < strong > TEXTO EM NEGRITO DADO COM IMPORTANTE </ strong > 
+
 * < em > TEXTO USANDO EMPHISIZED </ em > 
 * < i > TEXTO EM ITÁLICO  </ i > 
 *< small > texto com a letra pequena  </ small > 
+
+<h2 id="cabecalhosTag"> Cabeçalhos h1 - h6 </h2>
+A criação de cabeçalho permite hierarquizar os diferentes títulos de uma página, isso faz com que os mecanismos de busca consigam identificar quais são os títulos mais importantes da publicação , facilitando a lietura e a indexação do conteudo . Muito usado para títulos separando o conteúdo do site.
+
+<i><b>O HTML permite até  6 tipos de cabeçalhos, sendo o 1º  quando deseja definir maior nível de importância , e o último o menor nível </b></i>
+
+**SIXTÁXE:**
+
+	<h1> Cabeçalho 1 </h1> 
+	<h2> Cabeçalho 2 </h2> 
+	<h3> Cabeçalho 3 </h3> 
+	<h4> Cabeçalho 4 </h4> 
+	<h5> Cabeçalho 5 </h5> 
+	<h6> Cabeçalho 6 </h6> 
+
+<h2 id="listasTag"> Listas </h2>
+É uma sequência encadeada a qual contém mais de um elemento que você precisa exibir em sua página 
+
+No HTML existem 3 TIPOS DE LISTAS :
+<b>
+* <a href="#lno">Lista Não Ordenada - ul </a>
+* <a href="#lo">Lista Ordenada - ol </a>
+* <a href="#ld">Lista de Defnição - dl</a>
+</b>
+
+<h3 id="lno" >Lista Não Ordenada -  ul</h3>
+Esta lista apresenta os itens com marcadores.
+
+Cada < li >< / li > dentro do < ul > < / ul >, corresponde a 1 marcador, ou seja, um item, que será exibido em cada linha da lista.
+
+Dentro de uma < ul > pode-se usar infinitas  < li >
+
+**SIXTÁXE:**
+
+		< ul >   
+		< li >  item  1 </ li >  
+		< li >  item 2  </ li > 
+		</ ul > 
+
+<ul>   
+<li>  item  1 </li>  
+<li>  item 2  </li> 
+</ul> 
+
+Podemos ter várias < ul > dentro de outras < ul >:
+
+**SIXTÁXE:**
+
+		< ul >   
+		< li >  item  1 </ li >  
+		< li >  item 2  </ li > 
+		< ul >   
+		< li >  item  2.1 </ li >  
+		< li >  item 2 .2 </ li > 
+		< ul >   
+		< li >  item  2.2.1 </ li >  
+		< li >  item 2.2.2  </ li > 
+		 </ ul > 
+		 </ ul > 
+		< li > item 3 </ li > 
+		 </ ul > 
+
+<ul>   
+<li>  item  1 </li>  
+<li>  item 2  </li> 
+<ul>   
+<li>  item  2.1 </li>  
+<li>  item 2 .2 </li> 
+<ul>   
+<li>  item  2.2.1 </li>  
+<li>  item 2.2.2  </li> 
+ </ul> 
+ </ul> 
+<li> item 3 </li> 
+ </ul> 
+ 
+ 
+<h3 id="lo" >Lista Ordenada  -ol</h3>
+A lista ordenada apresenta seus itens numerados. 
+
+Cada < li >< / li > dentro do < ol > < / ol >, corresponde a 1 marcador, ou seja, um item, que será exibido em cada linha da lista.
+
+Dentro de uma < ol > pode-se usar infinitas  < li >
+
+**SIXTÁXE:**
+
+		<ol> 
+		<li> Item 1 </li> 
+		<li> Item2 </li> 
+		<li> Item 3 </li> 
+		</ol> 
+
+<ol> 
+<li> Item 1 </li> 
+<li> Item2 </li> 
+<li> Item 3 </li> 
+</ol> 
+
+
+Podemos mudar o número que a lista inicia, com: 
+
+	* < ol Start = " numero que deseja "> 
+
+Cuidado, pois se ficar uma nova lista dentro desta ela n seguirar a numeração, começará do 1 novamente .
+
+	<ol start="10"> 
+		<li>Hot Dog </li> 
+		<li> Churrasco </li> 
+			<ol> 
+				<li>Suco de Uva </li> 
+				<li> Cerveja </li> 
+				</ol>
+	</ol> 
+
+<ol start="10"> 
+	<li>Hot Dog </li> 
+	<li> Churrasco </li> 
+		<ol> 
+			<li>Suco de Uva </li> 
+			<li> Cerveja </li> 
+			</ol>
+</ol> 
+
+Outras funcionalidade é reverter a numeração, usando de trás para frente: 
+
+		< ol reversed > 
+
+		<ol reverse> 
+			<li> Item 1 </li> 
+			<li> Item 2 </li> 
+				<ol> 
+					<li> Item 3 </li> 
+					<li> Item 4 </li> 
+					</ol>
+		</ol> 
+
+<ol reverse> 
+	<li> Item 1 </li> 
+	<li> Item 2 </li> 
+		<ol> 
+			<li> Item 3 </li> 
+			<li> Item 4 </li> 
+			</ol>
+</ol> 
+
+Podemos mudar os números que aparecem por outra coisa, como algoritmos romanos, para isso usamos o atributo  TYPE 
+
+<table>
+<tr>
+	<th>Atributos</th>
+	<th>Tipos de Numeração </th>
+	<th>Saída </th>
+</tr>
+<tr>
+	<th>1</th>
+	<th>Número Arábicos</th>
+	<th>1,2,3...</th>
+</tr>
+<tr>
+	<th>a</th>
+	<th>Letras Minúsculas </th>
+	<th>a,b,c...</th>
+</tr>
+<tr>
+	<th>A</th>
+	<th>Letras Maiúsculas </th>
+	<th>A,B,C....</th>
+</tr>
+<tr>
+	<th>i</th>
+	<th>Números Romanos em Minúsculos</th>
+	<th>i, ii, iii,.... </th>
+</tr>
+<tr>
+	<th>I (i maiusculo) </th>
+	<th>Números Romanos em Maiúsculos </th>
+	<th>I, II, III, .... </th>
+</tr>
+</table>
+
+	<ol type="I"> 
+		<li> Item 1 </li> 
+		<li> Item 2 </li> 
+	</ol> 
+
+<ol type="I"> 
+	<li> Item 1 </li> 
+	<li> Item 2 </li> 
+</ol> 
+
+
+
+<h3 id="ld" >Lista de Definição - dl </h3>
+Este tipo de lista Não utiliza marcadores ou número 
+
+Deve ser usada quando somente se deseja descrever um termo < dt > e suas descrições < dd > 
+<b>
+	OBS: 
+		Dentro de um item da lista vc pode colocar texto, quebras de linha, imagens, links, outras listas, etc. 
+</b>
+
+**SINTÁXE:**
+
+	<dl> 
+		<dt> Termo 1</dt> 
+			</dd> Descrição 1</dd> 
+		<dt> Termo 2</dt> 
+			</dd> Descrição 2</dd> 
+	</dl> 
+
+<dl> 
+	<dt> Termo 1</dt> 
+		</dd> Descrição 1</dd> 
+	<dt> Termo 2</dt> 
+		</dd> Descrição 2</dd> 
+</dl> 
+
+
+<h3 id="combinandoListas" >Combinando Listas</h3>
+Podemos criar uma única lista usando as 3 juntas, uma dentro da outra .
+
+	<p>Receita de Omelete</p>
+
+	<dl>
+		<dt>Ingredientes</dt>
+			<ul>
+				<li>2 ovos</li>
+				<li>Queijo</li>
+				<li>Sal</li>
+				<li>Tomare cortado</li>
+			</ul>
+		<dt>Preparos</dt>
+			<ol>
+				<li>Bata os 2 ovos</li>
+				<li>Coloque-os na frigideira já untada com óleo</li>
+				<li>Coloque o sal, o presunto e o queijo</li>
+				<li>Ao fim acreste o tomate.</li>
+			</ol>
+	</dl>
+
+<p>Receita de Omelete</p>
+
+<dl>
+	<dt>Ingredientes</dt>
+		
+		<ul>
+			<li>2 ovos</li>
+			<li>Queijo</li>
+			<li>Sal</li>
+			<li>Tomare cortado</li>
+		</ul>
+	<dt>Prepardos</dt>
+		
+		<ol>
+			<li>Bata os 2 ovos</li>
+			<li>Coloque-os na frigideira já untada com óleo</li>
+			<li>Coloque o sal, o presunto e o queijo</li>
+			<li>Ao fim acreste o tomate.</li>
+		</ol>
+</dl>
+
+<h2 id="tabelas"> Tabelas </h2>
+Forma de apresentar informações através de tabelas 
+
+Cada < tr > é uma linha, onde tem < th >  e/ou < td > que representam as células da tabela.
+
+Os < th > são os títulos e os < td > as descrições
+
+Tabela na vertical:
+
+	<table border= "1" >
+			<tr>
+				<th> Titulo </th>
+				<th> Titulo </th>
+			</tr>
+			<tr>
+				<td> descrição </td >
+				<td> descrição </td >
+			</tr>
+	</table>
+
+<table border= "1" >
+        <tr>
+            <th> Titulo </th>
+            <th> Titulo </th>
+        </tr>
+        <tr>
+            <td> descrição </td >
+            <td> descrição </td >
+        </tr>
+</table>
+
+Tabela na horizontal:
+
+	<table border= "1" >
+			<tr>
+				<th> Titulo </th>
+				<td> descrição </td >
+			</tr>
+			<tr>
+			   <th> Titulo </th>
+				<td> descrição </td >
+			</tr>
+	</table>
+<table border= "1" >
+        <tr>
+            <th> Titulo </th>
+			<td> descrição </td >
+        </tr>
+        <tr>
+           <th> Titulo </th>
+            <td> descrição </td >
+        </tr>
+</table>
+
+
+<h2 id="formTag" >Formulários</h2>
+A tag responsável por criar formulários em HTML é o:
+		<form> Elememento de entrada <form>
+
+Um formulário HTML pode conter elementos de entrada, como campos de texto, caixas de seleção, botões de rádio etc.
+
+Ele é composto por outras tags, cada uma responsável por uma parte do formulário
+
+<h3> < label > </h3>
+A tag < label > é um elemento de entrada que define um rótulo para um elemento que será digitado 
+
+É o nome que identifica a entrada de dados: 
+
+**SINTÁXE:**
+
+        < form >
+		<label for = "nome do rótulo"> Descrição do rótulo </label> 
+        <label for="nome_dono">Nome:</label>  
+    </form>
+
+<form>
+<label for = "nome do rótulo"> Descrição do rótulo </label> 
+		<label for="nome_dono">Nome:</label>  
+</form>
+
+<h3> < input > </h3>
+A tag < input > é um elemento de entrada que especifica um campo de entrada onde o usuário deve inserir dados.
+
+ Deve ser utilizado junto com a tag < label >
+
+ É o elemento mais importante do formulario
+
+Todas as informações do usuário virão por meio dele
+
+Esse elemento pode variar e ter várias formas
+
+dependendo do atributo, põe exemplo, pode ser :  campo de texto, caixa de verificação, senha, botão de rádio, botão enviar, etc
+
+**SINTÁXE: **
+
+	<form>
+	<label for=""> TEXTO </label>
+	<input type="tipo" name ="nome" size="tamanho" maxkength="maximo de caracteres" placeholder="nome que fica de exemplo">
+	</form>
+
+<form>
+<label for=""> TEXTO </label>
+<input type="tipo" name ="nome" size="tamanho" maxlength="maximo de caracteres" placeholder="nome que fica de exemplo">
+</form>
+

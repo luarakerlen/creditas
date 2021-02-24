@@ -16,9 +16,10 @@
       * [Flex Shrink](#flex-shrink)
       * [Flex Basis](#flex-basis)
       * [Order](#order)
-   * [Flex Shorthand](#flex-shorthand)
-      * [Flex](#flex)
+   * [Flex Shorthands](#flex-shorthands)
       * [Flex Flow](#flex-flow)
+      * [Flex](#flex)
+   * [Flexbox x CSS Grid](#flexbox-x-css-grid)
    * [Autora](#autora)
 <!--te-->
 
@@ -305,8 +306,18 @@ Exemplo:
 .classeDoElementoEspecifico { order: 1; }
 ```
 
-## Flex Shorthand
+## Flex Shorthands
 
+### Flex Flow
+É a abreviação para as propriedades _flex-direction_ e _flex-wrap_, nessa ordem.
+- Valor default: row nowrap
+
+Exemplo:
+```
+.classeDoElementoPai { flex-flow: column wrap; }
+```
+
+---
 ### Flex
 É a abreviação para as propriedades _flex-grow_, _flex-shrink_ e _flex-basis_ combinados, nessa ordem.
 O segundo e o terceiro parâmetros (_flex-shrink_ e _flex-basis_) são opcionais, mas o elemento terá os valores default automaticamente para essas propriedades. 
@@ -335,15 +346,32 @@ Exemplos:
 ```
 .classeDoElementoEspecifico { flex: auto; }
 ```
----
-### Flex Flow
-É a abreviação para as propriedades _flex-direction_ e _flex-wrap_, nessa ordem.
-- Valor default: row nowrap
 
-Exemplo:
-```
-.classeDoElementoPai { flex-flow: column wrap; }
-```
+## Flexbox x CSS Grid
+O Flexbox é um sistema unidimensional, o que significa que pode lidar com colunas **ou** linhas, ao contrário do CSS Grid que é um sistema bidimensional.
+
+<div align="center">
+  <b>Comparação entre Flexbox e CSS Grid</b>
+  <p>
+    <img style="border-radius: 5px" height="400" src="./src/flex-css.jpg" alt="Imagem de comparação entre Flexbox e CSS Grid">
+  </p>
+</div>
+
+Ambos ajudam demais no alinhamento (horizontal e vertical) e no desenvolvimento de grids dentro de aplicações modernas.
+Geralmente, usa-se o CSS Grid para montar a estrutura de layout da página e o flexbox para construir os "componentes" dentro desses blocos de layout do grid.
+
+Podemos fazer a seguinte comparação:
+
+<div align="center">
+  <b>Comparação entre Flexbox e CSS Grid</b>
+  <p>
+    <img style="border-radius: 5px" height="400" src="./src/casa.jfif" alt="Imagem de comparação entre Flexbox e CSS Grid utilizando uma casa">
+  </p>
+</div>
+
+Ou seja, se imaginarmos uma casa, o **CSS Grid** seria responsável pela **estrutura dos cômodos** e o **flexbox** seria responsável pela **disposição dos móveis dentro desses cômodos**.
+Isso porque o Flexbox é unidimensional, ou seja, linha **OU** coluna, então é perfeito para o desenvolvimento interno de COMPONENTES.
+Já CSS Grid é multidimensional (ou bidimensional), ou seja, linhas **E** colunas, perfeito pra LAYOUTS.
 
 ### Autora
 ---
