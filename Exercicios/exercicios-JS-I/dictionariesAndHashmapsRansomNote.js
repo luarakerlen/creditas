@@ -8,7 +8,7 @@ const checkMagazine = (magazine, note) => {
             magazine[magazine.indexOf(item)] = null;
         }
     }
-    //console.log("Yes")
+    console.log("Yes")
     return;
 }
 
