@@ -8,12 +8,13 @@ const checkMagazine = (magazine, note) => {
             magazine[magazine.indexOf(item)] = null;
         }
     }
-    console.log("Yes")
+    //console.log("Yes")
     return;
 }
 
 magazine = "two times three is not four";
 note = "two times is four";
+
 magazine = magazine.split(' ');
 note = note.split(' ');
 
