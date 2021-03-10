@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <!-- Display -->
+            <span id="display">0</span>
+
+            <!-- Botões -->
+            <div class="buttons-numbers">
+                <button value="1" onclick="buttonNumber(this)">1</button>
+                <button value="2" onclick="buttonNumber(this)">2</button>
+                <button value="3" onclick="buttonNumber(this)">3</button>
+                <button value="4" onclick="buttonNumber(this)">4</button>
+                <button value="5" onclick="buttonNumber(this)">5</button>
+                <button value="6" onclick="buttonNumber(this)">6</button>
+                <button value="7" onclick="buttonNumber(this)">7</button>
+                <button value="8" onclick="buttonNumber(this)">8</button>
+                <button value="9" onclick="buttonNumber(this)">9</button>
+                <button value="0" onclick="buttonNumber(this)">0</button>
+                <button value="." onclick="buttonNumber(this)">.</button>
+                <button onclick="buttonReset()">C</button>    
+            </div>
+            
+            <div class="buttons-operations">
+                <button value="sum" onclick="buttonOperation(this)">+</button>
+                <button value="sub" onclick="buttonOperation(this)">-</button>
+                <button value="mul" onclick="buttonOperation(this)">x</button>
+                <button value="div" onclick="buttonOperation(this)">/</button>
+                <button onclick="buttonEqual()">=</button>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            Feito com amor por Luara Kerlen<br>
+            <span class="thin-size">Todos os direitos reservados &copy</span>
+        </footer>
+
+        <script src="./main.js"></script>
+    </body>
+</html>

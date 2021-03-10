@@ -1,0 +1,27 @@
+:root {
+    --black: #0D0D0D;
+    --red: #D90404;
+}
+
+.sushi {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sushi__title {
+    text-align: center;
+    margin: 20px;
+    margin-bottom: 0;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.cards__card {
+    background-color: var(--red);
+    border: var(--red) solid 3px;
+}

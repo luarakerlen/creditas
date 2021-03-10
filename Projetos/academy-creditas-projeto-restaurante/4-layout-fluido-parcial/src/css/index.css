@@ -1,0 +1,66 @@
+:root {
+    --black: #0D0D0D;
+    --red: #D90404;
+}
+
+/* Principal */
+.home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__main {
+    background: url(../imgs/imagem-fundo-centro5.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__main__title {
+    font-size: 48px;
+    padding: 30px 70px;
+    color: white;
+    border: thin solid white;
+    border-radius: 3px;
+    font-weight: 200;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.home__main__title__large { font-size: 80px; }
+
+/* Destaques */
+.home__featured {
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__featured__title {
+    font-size: 55px;
+    text-align: center;
+    margin: 20px;
+    margin-bottom: 0;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+/* Cards */
+.cards__card-home { height: 430px; }
+
+.cards__card__image-home { height: 50%; }
+
+.cards__card__description-home { height: 30%; }

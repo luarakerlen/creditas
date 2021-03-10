@@ -1,0 +1,14 @@
+Será um site de comida japonesa (sushi). Você pode definir o nome/logo.
+Teremos as seguintes páginas:
+- Home - Possui um bem vindo e 3 produtos em destaque
+- Sushi;
+- Sushi premium;
+- Contato (formulário com nome, email, mensagem e o botão) - mapinha do google com a localização do restaurante
+- Quem somos - Tela com descrição do restaurante
+O box do produto nas listas contém a foto, nome e uma mini descrição.
+
+Faremos as seguintes versões:
+- Layout fixo com largura total de 900px alinhada a esquerda com menu possuindo 250px e o conteúdo 650px
+- Layout fixo centralizado
+- Layout fluído: tanto o menu quanto o conteúdo
+- Menu com largura fixa + conteúdo flúido

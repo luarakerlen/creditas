@@ -1,0 +1,150 @@
+/* GERAL */
+:root {
+    --black: #0D0D0D;
+    --red: #8C3B4A;
+    --white: #F2F2F2;
+    --gray: #BDBEBF;
+    --green: #455952;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 20% 1fr;
+    grid-template-columns: 60% 35%;
+    column-gap: 5%;
+
+    width: 350px;
+    height: 300px;
+    padding: 15px;
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    margin: auto;
+
+    background-color: var(--gray);
+}
+
+/* DISPLAY */
+#display {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+
+    font-size: 25px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: var(--white);
+}
+
+/* BOTÕES GERAIS*/
+.buttons-numbers {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+
+    width: 100%;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+
+    /* border: 2px solid var(--white); */
+}
+
+.buttons-operations {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+
+    /* border: 2px solid var(--black); */
+}
+
+button {
+    height: calc(25% - 10px);
+    width: 45px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+    flex-grow: 1;
+    
+    background-color: var(--black);
+    color: var(--white);
+    font-size: 25px;
+}
+
+button:hover {
+    transition: .2s;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* .buttons-numbers button:nth-child(12) {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.buttons-numbers button:nth-child(12):hover {
+    background-color: var(--red);
+    color: var(--white); 
+} */
+
+/* BOTÕES DE OPERAÇÃO */
+.buttons-operations button {
+    height: calc(75%/2 - 10px);
+
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.buttons-operations button:hover {
+    background-color: var(--red);
+    color: var(--white); 
+}
+
+.buttons-operations button:last-child {
+    height: calc(25% - 10px);
+    flex-grow: 1;
+
+    background-color: var(--red);
+    color: var(--white); 
+}
+
+.buttons-operations button:last-child:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* RODAPÉ */
+.footer {
+    width: 350px;
+    padding: 5px 17px;
+    border-radius: 5px;
+    margin: auto;
+
+    background-color: var(--black);;
+    color: var(--white);
+    text-align: center;
+    font-size: 20px;
+    margin: auto;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+.thin-size { font-size: 17px; }

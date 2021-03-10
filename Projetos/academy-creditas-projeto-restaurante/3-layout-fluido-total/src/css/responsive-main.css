@@ -1,0 +1,131 @@
+@media screen and (min-width: 0) {
+    /* Main */
+    .container {
+        grid-template-rows: 100px 70px auto auto;
+        grid-template-columns: 100%;
+    }
+    
+    .header { 
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;
+    }
+    
+    .navbar {
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+    }
+    
+    .content {
+        grid-row: 3 / span 1;
+        grid-column: 1 / span 1;
+    }
+    
+    .footer {
+        grid-row: 4 / span 1;
+        grid-column: 1 / span 1;
+    }
+
+    /* Common */
+    /* Cabeçalho */
+    .header { grid-template-columns: 100%; }
+
+    .header__logo { display: none; }
+
+    .header__title {
+        grid-column: 1 / span 1;
+        font-size: 9vw;
+    }
+
+    /* Menu de navegação */
+    .navbar ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .navbar li { padding: 15px 10px; }
+
+    .navbar li a {
+        font-size: 20px;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    /* Rodapé */
+    .footer {
+        font-weight: 300;
+        font-size: 15px;
+    }
+
+    /* Cards */
+    .cards__card { width: 300px; }
+}
+
+@media screen and (min-width: 768px) {
+    /* Main */
+    .container {
+        grid-template-rows: 100px auto auto;
+        grid-template-columns: 20% 80%;
+    }
+    
+    .header { 
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 2;
+    }
+    
+    .navbar {
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+    }
+    
+    .content {
+        grid-row: 2 / span 1;
+        grid-column: 2 / span 1;
+    }
+    
+    .footer {
+        grid-row: 3 / span 1;
+        grid-column: 1 / span 2;
+    }
+
+    /* Common */
+    /* Cabeçalho */
+    .header { grid-template-columns: 20% 80%; }
+
+    .header__logo, .header__title { font-size: 55px; }
+
+    .header__logo {
+        display: block;
+        grid-column: 1 / span 1;
+    }
+
+    .header__title { grid-column: 2 / span 1; }
+    
+    /* Menu de navegação */
+    .navbar ul { display: block; }
+
+    .navbar li { padding: 20px 30px; }
+
+    .navbar li a {
+        font-size: 20px;
+        font-weight: 500;
+        text-align: start;
+    }
+
+    /* Rodapé */
+    .footer {
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    /* Cards */
+    .cards__card { width: 200px; }
+}
+
+@media screen and (min-width: 992px) {
+    /* Common */
+    /* Cabeçalho */
+    .header__logo, .header__title { font-size: 70px; }
+
+    /* Menu de navegação */
+    .navbar li a { font-size: 30px; }
+}

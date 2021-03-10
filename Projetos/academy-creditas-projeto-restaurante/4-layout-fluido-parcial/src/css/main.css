@@ -1,0 +1,23 @@
+:root {
+    --red: #D90404;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+body {
+    font-family: 'Big Shoulders Display', cursive;
+    font-weight: 500;
+}
+
+a { text-decoration: none; }
+
+li { list-style: none; }
+
+.container {
+    display: grid;
+    max-width: 100vw;
+}

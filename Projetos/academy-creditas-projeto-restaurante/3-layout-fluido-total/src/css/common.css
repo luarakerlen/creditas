@@ -1,0 +1,115 @@
+:root {
+    --black: #0D0D0D;
+    --red: #D90404;
+}
+
+/* Cabeçalho */
+.header {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: var(--black);
+}
+
+.header__logo, .header__title { font-family: 'Shojumaru', cursive; }
+
+.header__logo { text-transform: uppercase; }
+
+.header__title {
+    color: #fff;
+    justify-self: center;
+    margin-right: 5%;
+}
+
+.header__red { color: var(--red); }
+
+/* Menu de navegação */
+.navbar {
+    background-color: var(--black);;
+    width: 100%;
+}
+
+.navbar li:hover, .active {
+    background-color: #fff;
+    transition-duration: .5s;
+}
+
+.navbar li a {
+    color: #fff;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.navbar li:hover a, .navbar li.active a {
+    color: var(--black);;
+    transition-duration: .5s;
+}
+
+/* Rodapé */
+.footer {
+    background-color: var(--black);;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    letter-spacing: 1px;
+}
+
+/* Cards */
+.cards {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.cards__card {
+    display: flex;
+    flex-direction: column;
+    height: 370px;
+    border-radius: 5px;
+    margin: 10px 5px;
+
+    background-color: var(--black);
+    border: var(--black) solid 3px;
+}
+
+.cards__card__name, .cards__card__description, .cards__card__price {
+    margin: 10px;
+    text-align: justify;
+    color: #fff;
+}
+
+.cards__card__image {
+    height: 40%;
+    background-position: cover;
+    border-radius: 5% 5% 0 0;
+}
+
+.cards__card__name {
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.cards__card__description {
+    height: 40%;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cards__card__line {
+    width: 70%;
+    margin: auto;
+    color: #fff;
+    box-shadow: none;
+}
+
+.cards__card__price {
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+}

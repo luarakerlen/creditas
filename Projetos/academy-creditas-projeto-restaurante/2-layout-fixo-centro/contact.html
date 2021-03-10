@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushitas | Contato</title>
+
+    <link rel="stylesheet" href="./src/css/main.css">
+    <link rel="stylesheet" href="./src/css/common.css">
+    <link rel="stylesheet" href="./src/css/contact.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!--Fonte padrão-->
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;300;400;600&display=swap" rel="stylesheet">
+    <!--Fonte logo-->
+    <link href="https://fonts.googleapis.com/css2?family=Shojumaru&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="header">
+            <h1 class="header__logo">C<span class="header__red">S</span></h1>
+            <h1 class="header__title">Creditu<span class="header__red">Shi</span></h1>
+        </header>
+
+        <!-- Menu de navegação -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">Quem somos</a></li>
+                <li><a href="./sushi.html">Sushi</a></li>
+                <li><a href="./sushi-premium.html">Sushi Premium</a></li>
+                <li class="active"><a class="link" href="./contact.html">Contato</a></li>
+            </ul>
+        </nav>
+
+        <!-- Conteúdo Principal -->
+        <div class="content contact">
+            <main class="contact__main">
+                <h2 class="contact__main__title">Contato</h2>
+                <ul>
+                    <li><span class="contact__main__bold">Endereço:</span> Rua São Paulo, nº 215, Vitória, Espírito Santo</li>
+                    <li><span class="contact__main__bold">E-mail:</span> email@creditushi.com</li>
+                    <li><span class="contact__main__bold">Telefone:</span> (33) 3333.3333</li>
+                    <li><span class="contact__main__bold">Whatsapp:</span> (99) 9 9999.9999</li>
+                </ul>
+                <br>
+
+                <h4 class="contact__main__title">Onde estamos</h4>
+                <div class="contact__main__map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14963.307539852787!2d-40.38028110130545!3d-20.348769076583597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcf612bbf84b64fac!2sJapa%20Sushi!5e0!3m2!1spt-BR!2sbr!4v1612328803231!5m2!1spt-BR!2sbr" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </main>
+
+            <!-- Formulário -->
+            <form class="contact__form" autocomplete="off">
+                <h4 class="contact__form__title">Fale conosco</h4>
+
+                <div class="contact__form__name">
+                    <input id="contact__form__name" type="text" required>
+                    <label for="contact__form__name">Nome</label>
+                </div>
+
+                <div class="contact__form__email">
+                    <input id="contact__form__email" type="text" required>
+                    <label for="contact__form__email">E-mail</label>
+                </div>
+
+                <div class="contact__form__message">
+                    <textarea id="contact__form__message" required></textarea>
+                    <label for="contact__form__message">Mensagem</label>
+                </div>
+
+                <button class="contact__form__button">Enviar</button>
+            </form>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="footer">Feito com amor por Luara Kerlen - Todos os direitos reservados &copy</footer>
+    </div>
+
+</body>
+
+</html>
