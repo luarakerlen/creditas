@@ -58,8 +58,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-between;
-
-    /* border: 2px solid var(--white); */
 }
 
 .buttons-operations {
@@ -72,8 +70,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-between;
-
-    /* border: 2px solid var(--black); */
 }
 
 button {
@@ -95,20 +91,8 @@ button:hover {
     color: var(--black);
 }
 
-/* .buttons-numbers button:nth-child(12) {
-    background-color: var(--white);
-    color: var(--black);
-}
-
-.buttons-numbers button:nth-child(12):hover {
-    background-color: var(--red);
-    color: var(--white); 
-} */
-
 /* BOTÕES DE OPERAÇÃO */
 .buttons-operations button {
-    height: calc(75%/2 - 10px);
-
     background-color: var(--white);
     color: var(--black);
 }
@@ -119,7 +103,6 @@ button:hover {
 }
 
 .buttons-operations button:last-child {
-    height: calc(25% - 10px);
     flex-grow: 1;
 
     background-color: var(--red);
@@ -133,7 +116,6 @@ button:hover {
 
 /* RODAPÉ */
 .footer {
-    width: 350px;
     padding: 5px 17px;
     border-radius: 5px;
     margin: auto;
@@ -148,3 +130,17 @@ button:hover {
 }
 
 .thin-size { font-size: 17px; }
+
+/* RESPONSIVIDADE */
+@media screen and (min-width: 0) {
+    .container { width: 300px; }
+    .footer { width: 300px; }
+    .buttons-operations button { height: calc(20% - 12px); }
+}
+
+@media screen and (min-width: 768px) {
+    .container { width: 350px; }
+    .footer { width: 350px; }
+    .buttons-operations button { height: calc(75%/2 - 10px); }
+    .buttons-operations button:last-child { height: calc(25% - 10px); }
+}
