@@ -137,9 +137,9 @@ button:hover {
     .buttons-operations button { height: calc(20% - 12px); }
 }
 
-/* @media screen and (min-width: 1000px) {
+@media screen and (min-width: 1000px) {
     .container { width: 350px; }
     .footer { width: 350px; font-size: 20px;}
     .buttons-operations button { height: calc(75%/2 - 10px); }
     .buttons-operations button:last-child { height: calc(25% - 10px); }
-} */
+}
