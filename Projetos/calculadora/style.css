@@ -123,7 +123,6 @@ button:hover {
     background-color: var(--black);;
     color: var(--white);
     text-align: center;
-    font-size: 20px;
     margin: auto;
     margin-top: 10px;
     letter-spacing: 1px;
@@ -134,13 +133,13 @@ button:hover {
 /* RESPONSIVIDADE */
 @media screen and (min-width: 0) {
     .container { width: 300px; }
-    .footer { width: 300px; }
+    .footer { width: 300px; font-size: 18px; }
     .buttons-operations button { height: calc(20% - 12px); }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1000px) {
     .container { width: 350px; }
-    .footer { width: 350px; }
+    .footer { width: 350px; font-size: 20px;}
     .buttons-operations button { height: calc(75%/2 - 10px); }
     .buttons-operations button:last-child { height: calc(25% - 10px); }
 }
