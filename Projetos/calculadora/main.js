@@ -23,9 +23,7 @@ function buttonReset() {
 }
 
 function buttonNumber(button) {
-  //Armazena o número digitado/clicado
   const number = setNumber(button);
-  //changeClasses(button)
 
   //Reinicia as variáveis caso o igual tenha sido pressionado, para iniciar outra operação
   if (buttonEqualPressed) {
