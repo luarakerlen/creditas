@@ -1,10 +1,9 @@
 /* GERAL */
 :root {
-    --black: #0D0D0D;
+    --black: #011126;
     --red: #8C3B4A;
     --white: #F2F2F2;
-    --gray: #BDBEBF;
-    --green: #455952;
+    --gray: #405B73;
 }
 
 * {
@@ -13,6 +12,20 @@
     border: none;
     outline: none;
     text-decoration: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .container {
@@ -25,7 +38,7 @@
     height: 300px;
     padding: 15px;
     border: 2px solid var(--black);
-    border-radius: 5px;
+    border-radius: 5%;
     margin: auto;
 
     background-color: var(--gray);
@@ -113,6 +126,11 @@ button:hover {
     background-color: var(--black);
     color: var(--white);
 }
+
+/* button:focus {
+    background-color: black;
+    color: white;
+} */
 
 /* RODAPÉ */
 .footer {
