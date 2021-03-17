@@ -1,23 +1,23 @@
-let buttonOperationPressed = false;
-let buttonEqualPressed = false;
-let isANewNumber = false;
-let pointPressed = false;
 let currentValue = 0;
 let newValue = 0;
 let operation = null;
 let keyPressed = null;
 
+let buttonOperationPressed = false;
+let buttonEqualPressed = false;
+let isANewNumber = false;
+
 //Funções de clique nos botões
 function buttonReset() {
-  buttonOperationPressed = false;
-  buttonEqualPressed = false;
-  isANewNumber = false;
-  pointPressed = false;
   currentValue = 0;
   newValue = 0;
   operation = null;
   keyPressed = null;
   document.getElementById("display").innerHTML = "0";
+
+  buttonOperationPressed = false;
+  buttonEqualPressed = false;
+  isANewNumber = false;
 }
 
 function buttonNumber(button) {
@@ -44,7 +44,6 @@ function buttonNumber(button) {
 function buttonOperation(button) {
   buttonOperationPressed = true;
   buttonEqualPressed = false;
-  pointPressed = false;
 
   if (isANewNumber) {
     newValue = captureValueFromDisplay();
@@ -60,7 +59,6 @@ function buttonOperation(button) {
 function buttonEqual() {
   isANewNumber = false;
   buttonOperationPressed = true;
-  pointPressed = false;
 
   //Caso ainda não tenha nenhum número no display antes, o número atual se manterá
   if (!hasCurrentOperation()) {
@@ -126,22 +124,23 @@ function showNumberAtDisplay(number) {
 }
 
 function isTheFirstNumber() {
-  let numberAtDisplay = document.getElementById("display").innerHTML
-  if(numberAtDisplay === '0') {
-    return true
+  let numberAtDisplay = document.getElementById("display").innerHTML;
+  if (numberAtDisplay === "0") {
+    return true;
   }
-  return false
+  return false;
 }
 
-function isSecondPoint(digit) {
-  if (digit === ".") {
-    if (pointPressed) {
-      return true;
-    } else {
-      pointPressed = true;
-      return false;
-    }
+function isSecondPoint(number) {
+  let valueOnScreen = document.getElementById("display").textContent.split("");
+
+  if (buttonOperationPressed) {
+    return false;
   }
+  if (number === "." && valueOnScreen.includes(".")) {
+    return true;
+  }
+  return false;
 }
 
 function hasCurrentOperation() {
