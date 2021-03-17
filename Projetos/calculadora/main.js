@@ -1,8 +1,7 @@
 let buttonOperationPressed = false;
 let buttonEqualPressed = false;
-let newNumberPressed = false;
+let isANewNumber = false;
 let pointPressed = false;
-let isTheFirstNumber = true;
 let currentValue = 0;
 let newValue = 0;
 let operation = null;
@@ -12,9 +11,8 @@ let keyPressed = null;
 function buttonReset() {
   buttonOperationPressed = false;
   buttonEqualPressed = false;
-  newNumberPressed = false;
+  isANewNumber = false;
   pointPressed = false;
-  isTheFirstNumber = true;
   currentValue = 0;
   newValue = 0;
   operation = null;
@@ -31,10 +29,9 @@ function buttonNumber(button) {
   }
 
   //Caso seja o primeiro número, apagar o 0 do display, a não ser que seja um "."
-  if (isTheFirstNumber && number !== ".") {
+  if (isTheFirstNumber() && number !== ".") {
     clearDisplay();
   }
-  isTheFirstNumber = false;
 
   //Só permite que seja acrescentado 1 ponto por entrada no display
   if (isSecondPoint(number)) {
@@ -49,23 +46,19 @@ function buttonOperation(button) {
   buttonEqualPressed = false;
   pointPressed = false;
 
-  if (newNumberPressed) {
-    newValue = document.getElementById("display").textContent;
-    newValue != "" ? (newValue = parseFloat(newValue)) : (newValue = 0);
+  if (isANewNumber) {
+    newValue = captureValueFromDisplay();
     doOperation();
     setOperation(button);
-    newNumberPressed = false;
+    isANewNumber = false;
   } else {
     setOperation(button);
-    currentValue = document.getElementById("display").textContent;
-    currentValue != ""
-      ? (currentValue = parseFloat(currentValue))
-      : (currentValue = 0);
+    currentValue = captureValueFromDisplay();
   }
 }
 
 function buttonEqual() {
-  newNumberPressed = false;
+  isANewNumber = false;
   buttonOperationPressed = true;
   pointPressed = false;
 
@@ -80,8 +73,7 @@ function buttonEqual() {
   if (buttonEqualPressed) {
     doOperation();
   } else {
-    newValue = document.getElementById("display").textContent;
-    newValue != "" ? (newValue = parseFloat(newValue)) : (newValue = 0);
+    newValue = captureValueFromDisplay();
     doOperation();
     buttonEqualPressed = true;
   }
@@ -90,6 +82,17 @@ function buttonEqual() {
 //Funções auxiliares
 function clearDisplay() {
   document.getElementById("display").innerHTML = "";
+}
+
+function captureValueFromDisplay() {
+  let valueOnScreen = document.getElementById("display").textContent;
+  if (valueOnScreen !== "") {
+    valueOnScreen = parseFloat(valueOnScreen);
+  } else {
+    valueOnScreen = 0;
+  }
+
+  return valueOnScreen;
 }
 
 function setNumber(button) {
@@ -115,11 +118,19 @@ function showNumberAtDisplay(number) {
   //Decide se deve acrescentar o número ao que já existe no display ou substituí-lo
   if (buttonOperationPressed) {
     document.getElementById("display").innerHTML = number;
-    newNumberPressed = true;
+    isANewNumber = true;
     buttonOperationPressed = false;
   } else {
     document.getElementById("display").innerHTML += number;
   }
+}
+
+function isTheFirstNumber() {
+  let numberAtDisplay = document.getElementById("display").innerHTML
+  if(numberAtDisplay === '0') {
+    return true
+  }
+  return false
 }
 
 function isSecondPoint(digit) {
