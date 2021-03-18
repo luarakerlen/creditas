@@ -125,10 +125,7 @@ function showNumberAtDisplay(number) {
 
 function isTheFirstNumber() {
   let numberAtDisplay = document.getElementById("display").innerHTML;
-  if (numberAtDisplay === "0") {
-    return true;
-  }
-  return false;
+  return numberAtDisplay === "0";
 }
 
 function isSecondPoint(number) {
@@ -144,10 +141,7 @@ function isSecondPoint(number) {
 }
 
 function hasCurrentOperation() {
-  if (operation === null) {
-    return false;
-  }
-  return true;
+  return operation === null;
 }
 
 function doOperation() {
