@@ -3,8 +3,8 @@ let newValue = 0;
 let operation = null;
 let keyPressed = null;
 
-let buttonOperationPressed = false;
-let buttonEqualPressed = false;
+let buttonOperationWasPressed = false;
+let buttonEqualWasPressed = false;
 let isANewNumber = false;
 
 //Funções de clique nos botões
@@ -15,8 +15,8 @@ function buttonReset() {
   keyPressed = null;
   document.getElementById("display").innerHTML = "0";
 
-  buttonOperationPressed = false;
-  buttonEqualPressed = false;
+  buttonOperationWasPressed = false;
+  buttonEqualWasPressed = false;
   isANewNumber = false;
 }
 
@@ -24,7 +24,7 @@ function buttonNumber(button) {
   const number = setNumber(button);
 
   //Reinicia as variáveis caso o igual tenha sido pressionado, para iniciar outra operação
-  if (buttonEqualPressed) {
+  if (buttonEqualWasPressed) {
     buttonReset();
   }
 
@@ -42,8 +42,8 @@ function buttonNumber(button) {
 }
 
 function buttonOperation(button) {
-  buttonOperationPressed = true;
-  buttonEqualPressed = false;
+  buttonOperationWasPressed = true;
+  buttonEqualWasPressed = false;
 
   if (isANewNumber) {
     newValue = captureValueFromDisplay();
@@ -58,7 +58,7 @@ function buttonOperation(button) {
 
 function buttonEqual() {
   isANewNumber = false;
-  buttonOperationPressed = true;
+  buttonOperationWasPressed = true;
 
   //Caso ainda não tenha nenhum número no display antes, o número atual se manterá
   if (!hasCurrentOperation()) {
@@ -68,12 +68,12 @@ function buttonEqual() {
   //Apenas pega um novo valor caso tenha sido escolhida uma operação.
   //Caso o botão de igual esteja sendo apertado seguidamente,
   //os valores de currentValue e newValue se mantém e a última operação continua sendo realizada
-  if (buttonEqualPressed) {
+  if (buttonEqualWasPressed) {
     doOperation();
   } else {
     newValue = captureValueFromDisplay();
     doOperation();
-    buttonEqualPressed = true;
+    buttonEqualWasPressed = true;
   }
 }
 
@@ -114,10 +114,10 @@ function setOperation(button) {
 
 function showNumberAtDisplay(number) {
   //Decide se deve acrescentar o número ao que já existe no display ou substituí-lo
-  if (buttonOperationPressed) {
+  if (buttonOperationWasPressed) {
     document.getElementById("display").innerHTML = number;
     isANewNumber = true;
-    buttonOperationPressed = false;
+    buttonOperationWasPressed = false;
   } else {
     document.getElementById("display").innerHTML += number;
   }
@@ -134,7 +134,7 @@ function isTheFirstNumber() {
 function isSecondPoint(number) {
   let valueOnScreen = document.getElementById("display").textContent.split("");
 
-  if (buttonOperationPressed) {
+  if (buttonOperationWasPressed) {
     return false;
   }
   if (number === "." && valueOnScreen.includes(".")) {
