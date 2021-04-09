@@ -472,7 +472,7 @@ Já CSS Grid é multidimensional (ou bidimensional), ou seja, linhas **E** colun
 ---
 
 <a href="https://www.linkedin.com/in/luarakerlen/">
- <img title="Luara Kerlen" style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C4E03AQGS1uYwIh8sPQ/profile-displayphoto-shrink_200_200/0/1517236388384?e=1613606400&v=beta&t=CDWXZHUBDwCQJ_2S8l5hfBRs_pbXtXQmacwsFLBcqpg" width="100px;" alt="Foto da Luara"/>
+ <img title="Luara Kerlen" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/26902816?v=4" width="100px;" alt="Foto da Luara"/>
  <br />
  <sub><b>Luara Kerlen</b></sub></a> <a href="https://www.linkedin.com/in/luarakerlen/" title="Luara Kerlen"></a>
 
